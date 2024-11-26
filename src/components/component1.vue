@@ -1,0 +1,274 @@
+<template>
+  <div class="Component-Container">
+    <div class="componentTextPart">
+      <div class="sloganContainer">
+        <div class="componentNumber"><span>0</span><span>1</span></div>
+      </div>
+      <div class="sloganContainer">
+        <div class="componentTitle componentSlogan">Our Mission</div>
+      </div>
+      <div class="sloganContainer">
+        <div class="componentContent componentSlogan componentContentStep componentContentStep1">
+          Empower Industries with Intelligent Robotic Systems that Enhance
+        </div>
+      </div>
+
+      <div class="sloganContainer">
+        <div class="componentContent componentSlogan componentContentStressed">
+          <span class="stressedText">Efficiency</span>, <span class="stressedText">Safety</span>
+          <span class="and stressedText"> & </span>
+          <span class="stressedText">Human-robot Collaboration</span>
+        </div>
+      </div>
+
+      <arrow class="arrowLink01" :themeColor="'#53608F'">Learn More</arrow>
+    </div>
+
+    <div class="componentImagePart">
+      <div class="componentImg"></div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import arrow from '@/utils/circleArrow.vue'
+import gsap from 'gsap'
+import { onMounted } from 'vue'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+onMounted(() => {
+  const bootImgTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.Component-Container',
+      start: 'top top',
+      end: '+=400%',
+      toggleActions: 'play complete reverse reset',
+      pin: true,
+      // markers: {
+      //   startColor: 'yellow',
+      //   endColor: 'orange'
+      // },
+      scrub: 0.5
+    }
+  })
+  bootImgTL.set('.componentImg', {
+    xPercent: 50
+  })
+  bootImgTL
+    .to('.componentImg', {
+      xPercent: 0,
+      duration: 1,
+      autoAlpha: 1,
+      ease: 'sine.in'
+    })
+    .to('.componentImagePart', {
+      '--imageCoverPer': '0%',
+      duration: 1,
+      ease: 'sine.inOut',
+      delay: 10
+    })
+    .to('.componentImg', {
+      scaleY: 0,
+      duration: 1,
+      ease: 'sine.out',
+      delay: 5
+    })
+
+  const bootTextTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.Component-Container',
+      start: 'top-=30% top',
+      toggleActions: 'play complete resume reset',
+      scrub: 0.5
+    }
+  })
+  bootTextTL
+    .to('.componentNumber', {
+      autoAlpha: 1,
+      duration: 0.5,
+      ease: 'sine.in'
+    })
+    .from('.componentContentStep', {
+      autoAlpha: 0,
+      yPercent: -100,
+      duration: 0.5,
+      ease: 'sine.in',
+      stagger: 0.1
+    })
+
+    .from('.componentContentStressed', {
+      autoAlpha: 0,
+      yPercent: -100,
+      duration: 0.5,
+      ease: 'sine.in',
+      stagger: 0.1
+    })
+    .to('.arrowLink01', {
+      autoAlpha: 1,
+      duration: 0.5,
+      ease: 'sine.in'
+    })
+    // 优先消除能选中状态
+    .to('.arrowLink01', {
+      pointerEvents: 'auto',
+      duration: 0.01,
+      ease: 'none'
+    })
+
+  const quitTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.Component-Container',
+      start: 'top+=30% top',
+      end: '+=70%',
+      // scrub: 0.5,
+      // markers: true,
+      toggleActions: 'play complete reverse reset'
+    }
+  })
+  quitTL
+    // 优先消除能选中状态
+    .to('.Component-Container .arrowLink01', {
+      pointerEvents: 'none',
+      duration: 0.01,
+      ease: 'none'
+    })
+    .to('.Component-Container .arrowLink01', {
+      autoAlpha: 0,
+      duration: 0.5,
+      ease: 'sine.out'
+    })
+    .to(
+      '.Component-Container .componentSlogan',
+      {
+        autoAlpha: 0,
+        yPercent: 100,
+        duration: 0.5,
+        ease: 'sine.out',
+        stagger: 0.1
+      },
+      '>+=1'
+    )
+    .to('.Component-Container .componentNumber', {
+      autoAlpha: 1,
+      duration: 0.5,
+      ease: 'sine.out'
+    })
+})
+</script>
+
+<style scoped>
+.Component-Container {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  /* height: fit-content; */
+  height: 100dvh;
+  margin-top: 0dvh;
+  background: linear-gradient(#e1e6fa, #ffffff);
+  overflow: hidden;
+}
+.componentTextPart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  margin: 5vmax 5%;
+  margin-right: 0%;
+  /* padding: 7.5% 0% 10% 5%; */
+}
+.componentNumber {
+  display: flex;
+  position: relative;
+  border-radius: 50%;
+  height: 10vmax;
+  aspect-ratio: 1;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vmax;
+  color: #53608f;
+  text-shadow: 0 0 1rem #ffffff77;
+  font-family: 'alibaba-puhui-bold';
+  line-height: calc(5vmax * 1.5);
+  /* margin-bottom: -5%; */
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+}
+.componentTitle {
+  font-family: 'alibaba-puhui-heavy';
+  text-transform: uppercase;
+  font-size: 5vmax;
+  line-height: 1;
+  color: #53608f;
+  text-shadow: 0 0 1rem #ffffff77;
+  z-index: 5;
+  margin: 1vmax 0;
+}
+.componentContent {
+  font-family: 'alibaba-puhui-regular';
+  font-size: 2vmax;
+  line-height: 1.5;
+  color: hsl(231, 53%, 50%);
+  padding: 0% 5% 0% 0.5%;
+  position: relative;
+}
+
+.stressedText {
+  font-family: 'alibaba-puhui-bold';
+  font-size: 3vmax;
+  line-height: 1;
+  text-transform: uppercase;
+  color: hsl(231, 100%, 25%);
+}
+.stressedText:not(.and):hover {
+  color: hsl(231, 75%, 75%);
+}
+.componentContentStressed {
+  margin-top: 0.5%;
+}
+.componentImagePart {
+  --imageCoverPer: 100%;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  height: 100%;
+  width: 60%;
+  padding: 5%;
+}
+.componentImg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.25vmax;
+  visibility: hidden;
+  opacity: 0;
+  background-size: cover;
+  background-image: url('@/assets/BGImg/robotHand.jpg');
+  transform-origin: top center;
+}
+.componentImg::after {
+  content: '';
+  position: absolute;
+  /* top: 5%; */
+  height: 100%;
+  width: 100%;
+  border-radius: 1.25vmax;
+  background-color: hsl(227, 27%, 44%);
+  clip-path: inset(var(--imageCoverPer) 0% 0% 0%);
+}
+.arrowLink01 {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  font-family: 'alibaba-puhui-bold';
+}
+.sloganContainer {
+  overflow: hidden;
+}
+</style>
