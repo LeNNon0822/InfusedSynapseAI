@@ -10,27 +10,27 @@ import { onMounted } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 onMounted(() => {
-  // const scrollHidingTL = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '.routerViewContainer',
-  //     start: 'top+=10% top+=10%',
-  //     end: 'bottom bottom',
-  //     toggleActions: 'play none reverse reverse'
-  //     // markers: true
-  //   }
-  // })
-  // scrollHidingTL
-  //   .to('.backToTopButton', {
-  //     xPercent: -200,
-  //     duration: 1,
-  //     ease: 'sine.inOut'
-  //   })
-  //   .to('.backToTopButton', {
-  //     delay: 1.5,
-  //     xPercent: 0,
-  //     duration: 0.25,
-  //     ease: 'sine.inOut'
-  //   })
+  const scrollHidingTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.routerViewContainer',
+      start: 'top+=10% top+=10%',
+      end: 'bottom bottom',
+      toggleActions: 'play none reverse reverse'
+      // markers: true
+    }
+  })
+  scrollHidingTL
+    .to('.backToTopButton', {
+      xPercent: -200,
+      duration: 1,
+      ease: 'sine.inOut'
+    })
+    .to('.backToTopButton', {
+      delay: 1.5,
+      xPercent: 0,
+      duration: 0.25,
+      ease: 'sine.inOut'
+    })
 })
 const backToTop = () => {
   console.log('Click!')
@@ -60,7 +60,12 @@ const backToTop = () => {
   width: 70%;
   aspect-ratio: 1;
   border-radius: 25%;
-  background-image: linear-gradient(rgba(164, 185, 255, 0.75), rgba(79, 110, 214, 0.75));
+  background-image: linear-gradient(
+    hsla(226, 100%, 95%, 0.97) 0%,
+    hsla(226, 62%, 100%, 1) 10%,
+    hsla(226, 62%, 100%, 1) 95%,
+    hsla(226, 38%, 95%, 0.97) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,6 +74,10 @@ const backToTop = () => {
   transition: transform 1s ease-in-out;
   transform: translateX(200%);
   pointer-events: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.backToTopButton:hover {
+  opacity: 0.85;
 }
 .backToTopIcon {
   width: 60%;
@@ -76,7 +85,7 @@ const backToTop = () => {
   background-image: url('@/assets/icon/component/backToTopV2.png');
   background-repeat: no-repeat;
   background-size: cover;
-  filter: drop-shadow(0 -5vmax white);
+  filter: drop-shadow(0 -5vmax hsla(226, 100%, 20%, 1));
   transform: translateY(5vmax);
 }
 .BackToTop-Container:hover .backToTopButton {

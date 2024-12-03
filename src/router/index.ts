@@ -26,7 +26,12 @@ const routes: Array<RouteRecordRaw> = [
     meta: { title: 'ListTextTemplate' },
     component: () => import('@/views/ThemePage/themePageTemplate3.vue')
   },
-
+  {
+    path: '/careers',
+    name: 'Careers',
+    meta: { title: 'Careers' },
+    component: () => import('@/views/careersPage.vue')
+  },
   {
     path: '/:cathAll(.*)',
     name: '404NotFound',

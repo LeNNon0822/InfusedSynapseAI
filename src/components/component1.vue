@@ -9,19 +9,27 @@
       </div>
       <div class="sloganContainer">
         <div class="componentContent componentSlogan componentContentStep componentContentStep1">
-          Empower Industries with Intelligent Robotic Systems that Enhance
+          Empower Industries with
+        </div>
+      </div>
+      <div class="sloganContainer">
+        <div class="componentContent componentSlogan componentContentStep componentContentStep1">
+          Intelligent Robotic Systems that Enhance
         </div>
       </div>
 
       <div class="sloganContainer">
         <div class="componentContent componentSlogan componentContentStressed">
-          <span class="stressedText">Efficiency</span>, <span class="stressedText">Safety</span>
-          <span class="and stressedText"> & </span>
-          <span class="stressedText">Human-robot Collaboration</span>
+          <div><span class="stressedText">Efficiency</span><span>,</span></div>
+          <div>
+            <span class="stressedText">Safety</span> <span class="and stressedText">&</span>
+          </div>
+
+          <div class="stressedText">Human-robot Collaboration</div>
         </div>
       </div>
 
-      <arrow class="arrowLink01" :themeColor="'#53608F'">Learn More</arrow>
+      <!-- <arrow class="arrowLink01" :themeColor="'#53608F'">Learn More</arrow> -->
     </div>
 
     <div class="componentImagePart">
@@ -71,7 +79,7 @@ onMounted(() => {
       scaleY: 0,
       duration: 1,
       ease: 'sine.out',
-      delay: 5
+      delay: 2.5
     })
 
   const bootTextTL = gsap.timeline({
@@ -96,9 +104,22 @@ onMounted(() => {
       stagger: 0.1
     })
 
-    .from('.componentContentStressed', {
+    .from('.componentContentStressed > div', {
       autoAlpha: 0,
       yPercent: -100,
+
+      duration: 0.5,
+      ease: 'sine.in',
+      stagger: 0.1
+    })
+    .to('.stressedText', {
+      color: ' hsl(231, 75%, 75%)',
+      duration: 0.5,
+      ease: 'sine.in',
+      stagger: 0.1
+    })
+    .to('.stressedText', {
+      color: ' hsl(231, 75%, 25%)',
       duration: 0.5,
       ease: 'sine.in',
       stagger: 0.1
@@ -192,7 +213,7 @@ onMounted(() => {
   color: #53608f;
   text-shadow: 0 0 1rem #ffffff77;
   font-family: 'alibaba-puhui-bold';
-  line-height: calc(5vmax * 1.5);
+  line-height: 1.5;
   /* margin-bottom: -5%; */
   z-index: 1;
   visibility: hidden;
@@ -201,7 +222,7 @@ onMounted(() => {
 .componentTitle {
   font-family: 'alibaba-puhui-heavy';
   text-transform: uppercase;
-  font-size: 5vmax;
+  font-size: 4.5vmax;
   line-height: 1;
   color: #53608f;
   text-shadow: 0 0 1rem #ffffff77;
@@ -210,7 +231,7 @@ onMounted(() => {
 }
 .componentContent {
   font-family: 'alibaba-puhui-regular';
-  font-size: 2vmax;
+  font-size: 1vmax;
   line-height: 1.5;
   color: hsl(231, 53%, 50%);
   padding: 0% 5% 0% 0.5%;
@@ -218,17 +239,17 @@ onMounted(() => {
 }
 
 .stressedText {
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'libreBaskerville';
   font-size: 3vmax;
-  line-height: 1;
+  line-height: 1.25;
   text-transform: uppercase;
   color: hsl(231, 100%, 25%);
 }
 .stressedText:not(.and):hover {
-  color: hsl(231, 75%, 75%);
+  color: hsl(231, 75%, 75%) !important;
 }
 .componentContentStressed {
-  margin-top: 0.5%;
+  margin-top: 1.5%;
 }
 .componentImagePart {
   --imageCoverPer: 100%;

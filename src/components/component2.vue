@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <arrow class="arrowLink02" :themeColor="'#53608F'">Learn More</arrow>
+      <!-- <arrow class="arrowLink02" :themeColor="'#53608F'">Learn More</arrow> -->
     </div>
   </div>
 </template>
@@ -127,6 +127,11 @@ onMounted(() => {
       ease: 'sine.in',
       duration: 2.5
     })
+    .to('.Component2-Container .component2Number', {
+      opacity: 1,
+      ease: 'sine.in',
+      duration: 2.5
+    })
 })
 </script>
 
@@ -194,7 +199,7 @@ onMounted(() => {
 
 .component2Title {
   font-family: 'alibaba-puhui-heavy';
-  font-size: 5vmax;
+  font-size: 4.5vmax;
   line-height: 1;
   color: #53608f;
   text-shadow: 0 0 1rem #ffffff77;
@@ -205,7 +210,7 @@ onMounted(() => {
 
 .component2Content {
   font-family: 'alibaba-puhui-regular';
-  font-size: 1.25vmax;
+  font-size: 1vmax;
   line-height: 1.5;
   color: #3d51c4;
   line-height: 1.5;

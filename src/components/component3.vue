@@ -6,20 +6,26 @@
     </div>
     <div class="component3TextPart">
       <div class="slogan3Container visible">
+        <div class="numberSpaceOccupied shrinkSpace"></div>
         <div class="component3Number">
           <div class="digitContainer">
             <div class="digit1st">0</div>
-            <div class="digit2nd"><span>3</span><span>4</span><span>5</span></div>
+            <div class="digit2nd digitTop"><span>3</span><span>4</span><span>5</span></div>
           </div>
         </div>
+        <div class="numberSpaceOccupied"></div>
       </div>
       <div class="sloganContentContainer">
         <div class="slogan3Content content03">
           <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
             <div class="component3Title component3Slogan component3TitleMT">Universal Robotics</div>
+            <div class="titleSpaceOccupied"></div>
           </div>
           <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
             <div class="component3Title component3Slogan component3TitleMB">Core (ABrain)</div>
+            <div class="titleSpaceOccupied"></div>
           </div>
           <div class="slogan3Container">
             <div class="component3Content component3Slogan">
@@ -31,65 +37,97 @@
           </div>
           <div class="slogan3Container">
             <div class="component3Content component3Slogan">
-              Contact admin@abrain.com to explore how our innovative robotics solutions can bring
-              adaptive, intelligent automation to your operations.
+              Contact <span class="thicken">admin@abrain.com</span> to explore how our innovative
+              robotics solutions can bring adaptive, intelligent automation to your operations.
             </div>
           </div>
           <arrow class="arrowLink03" :themeColor="'#53608F'">Learn More</arrow>
         </div>
         <div class="slogan3Content content04">
           <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
             <div class="component3Title component3Slogan component3TitleMT">ABrain Adaptive</div>
+            <div class="titleSpaceOccupied"></div>
           </div>
           <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
             <div class="component3Title component3Slogan component3TitleMB">Robotics Platform</div>
+            <div class="titleSpaceOccupied"></div>
           </div>
           <div class="slogan3Container">
             <div class="component3Content component3Slogan">
               Ready to pioneer next-level AI solutions for robotics? Our ABrain-powered mobile
               platform lets you develop adaptive applications effortlessly, with robust manipulation
-              capabilities and easy integration—making advanced robotics as straightforward as a
-              software deployment.
+              capabilities and easy
+              <div class="">
+                integration—making advanced robotics as straightforward as a software deployment.
+              </div>
             </div>
           </div>
           <div class="slogan3Container">
             <div class="component3Content component3Slogan">
-              Contact admin@abrain.com to explore how our innovative robotics solutions can bring
-              adaptive, intelligent automation to your operations.
+              Apply for early access to explore impactful innovations in mobile robotics!
             </div>
           </div>
           <arrow class="arrowLink03" :themeColor="'#53608F'">Learn More</arrow>
+        </div>
+        <div class="slogan3Content content05">
+          <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
+            <div class="component3Title component3Slogan component3TitleMT">Adaptive Robotics</div>
+            <div class="titleSpaceOccupied"></div>
+          </div>
+          <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
+            <div class="component3Title component3Slogan">Platform for</div>
+            <div class="titleSpaceOccupied"></div>
+          </div>
+          <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
+            <div class="component3Title component3Slogan component3TitleMB">
+              Security & Inspection
+            </div>
+            <div class="titleSpaceOccupied"></div>
+          </div>
+          <div class="slogan3Container">
+            <div class="component3Content component3Slogan">
+              Seeking advanced automation for inspections, data collection, or patrols? Our ABrain
+              platform integrates intelligent sensing and decision-making to support autonomous
+              security and inspection in complex environments, ensuring precision and adaptability.
+            </div>
+          </div>
+          <div class="slogan3Container">
+            <div class="component3Content component3Slogan">
+              Contact <span class="thicken">admin@abrain.com</span> to learn how we can enhance your
+              operations with intelligent robotics solutions.
+            </div>
+          </div>
+          <!-- <arrow class="arrowLink03" :themeColor="'#53608F'">Learn More</arrow> -->
         </div>
       </div>
     </div>
     <div class="component3ImagePart">
       <div class="componentImageContainer">
-        <div class="component3Img slot1 beforeSlot"></div>
-        <div class="component3Img slot2 currentSlot"></div>
-        <div class="component3Img slot3 afterSlot"></div>
+        <div class="component3Img slot1 currentSlot"></div>
+        <div class="component3Img slot2 afterSlot"></div>
+        <div class="component3Img slot3 beforeSlot"></div>
       </div>
       <div class="sectionSelector">
         <div class="seperator"></div>
         <div class="buttonContainer">
           <div class="leftArrowContainer" @click="leftClick">
-            <img
-              loading="lazy"
-              decoding="sync"
-              fetchpriority="high"
-              class="leftArrow arrow"
-              src="@/assets/icon/component/arrowBtn.png"
-              alt=""
-            />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 65 100 70" class="leftArrow arrow">
+              <path
+                d="M 66 65 H 134 Q 148 67 150 81 V 119 Q 148 133 134 135 H 66 Q 52 133 50 119 V 81 Q 52 67 66 65 V 70 Q 57 72 55 81 V 119 Q 57 128 66 130 H 134 Q 143 128 145 119 V 81 Q 143 72 134 70 H 66 Z M 104 90 L 125 100 L 104 110 L 104 103 L 75 103 L 75 97 H 104 Z"
+              />
+            </svg>
           </div>
           <div class="rightArrowContainer" @click="rightClick">
-            <img
-              loading="lazy"
-              decoding="sync"
-              fetchpriority="high"
-              class="rightArrow arrow"
-              src="@/assets/icon/component/arrowBtn.png"
-              alt=""
-            />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 65 100 70" class="rightArrow arrow">
+              <path
+                d="M 66 65 H 134 Q 148 67 150 81 V 119 Q 148 133 134 135 H 66 Q 52 133 50 119 V 81 Q 52 67 66 65 V 70 Q 57 72 55 81 V 119 Q 57 128 66 130 H 134 Q 143 128 145 119 V 81 Q 143 72 134 70 H 66 Z M 104 90 L 125 100 L 104 110 L 104 103 L 75 103 L 75 97 H 104 Z"
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -100,37 +138,10 @@
 <script setup lang="ts">
 import arrow from '@/utils/circleArrow.vue'
 import gsap from 'gsap'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-const leftClick = () => {
-  //获取dom
-  const currentSlot = document.querySelector('.currentSlot')
-  const beforeSlot = document.querySelector('.beforeSlot')
-  const afterSlot = document.querySelector('.afterSlot')
-  //删除class标签
-  currentSlot?.classList.remove('currentSlot')
-  beforeSlot?.classList.remove('beforeSlot')
-  afterSlot?.classList.remove('afterSlot')
-  //新增标签
-  currentSlot?.classList.add('beforeSlot')
-  beforeSlot?.classList.add('afterSlot')
-  afterSlot?.classList.add('currentSlot')
-}
-const rightClick = () => {
-  //获取dom
-  const currentSlot = document.querySelector('.currentSlot')
-  const beforeSlot = document.querySelector('.beforeSlot')
-  const afterSlot = document.querySelector('.afterSlot')
-  //删除class标签
-  currentSlot?.classList.remove('currentSlot')
-  beforeSlot?.classList.remove('beforeSlot')
-  afterSlot?.classList.remove('afterSlot')
-  //新增标签
-  currentSlot?.classList.add('afterSlot')
-  beforeSlot?.classList.add('currentSlot')
-  afterSlot?.classList.add('beforeSlot')
-}
+const slotIndex = ref(3)
+var slotChange03: gsap.core.Tween, slotChange04: gsap.core.Tween, slotChange05: gsap.core.Tween
 
 gsap.registerPlugin(ScrollTrigger)
 onMounted(() => {
@@ -227,16 +238,15 @@ onMounted(() => {
       duration: 1.5,
       ease: 'sine.inOut'
     })
-
     .to('.component3Number', {
-      xPercent: -400,
+      xPercent: 0,
       duration: 2.5,
       ease: 'back.in'
     })
     .to(
       '.component3Title',
       {
-        x: '-21.5vmax',
+        x: '0vmax',
         duration: 2.75,
         ease: 'back.in'
       },
@@ -264,18 +274,33 @@ onMounted(() => {
     )
     .to('.Component3-Container', {
       background: 'radial-gradient(#ffffff, #e1e6fa 80%)',
+      duration: 15,
+      ease: 'sine.out'
+    })
+    .to(
+      '.numberSpaceOccupied.shrinkSpace',
+      {
+        flex: 0,
+        duration: 2.5,
+        ease: 'back.in'
+      },
+      '<+=1.5'
+    )
+    .to(
+      '.titleSpaceOccupied.shrinkSpace',
+      {
+        flex: 0,
+        duration: 2.5,
+        ease: 'back.in',
+        stagger: 0.5
+      },
+      '<+=0.5'
+    )
+    .to('.component3Content', {
+      autoAlpha: 1,
       duration: 1.5,
       ease: 'sine.in'
     })
-    .to(
-      '.component3Content',
-      {
-        autoAlpha: 1,
-        duration: 1.5,
-        ease: 'sine.in'
-      },
-      '<'
-    )
     .to('.arrowLink03', {
       yPercent: 0,
       autoAlpha: 1,
@@ -287,21 +312,126 @@ onMounted(() => {
       duration: 0.01,
       ease: 'none'
     })
-
     .to('.component3ImagePart', {
       autoAlpha: 1,
       yPercent: 0,
       duration: 5,
       ease: 'sine.out'
     })
-
     .to('.component3Img', {
       delay: 10,
       // yPercent: 500,
       duration: 5,
       ease: 'back.inOut'
     })
+
+  slotChange03 = gsap.to('.content03', {
+    autoAlpha: 1,
+    duration: 1,
+    ease: 'sine.in'
+  })
+  slotChange04 = gsap.to('.content04', {
+    autoAlpha: 1,
+    duration: 1,
+    ease: 'sine.in'
+  })
+  slotChange05 = gsap.to('.content05', {
+    autoAlpha: 1,
+    duration: 1,
+    ease: 'sine.in'
+  })
+  slotChange04.pause()
+  slotChange05.pause()
 })
+const leftClick = () => {
+  //获取dom
+  const currentSlot = document.querySelector('.currentSlot')
+  const beforeSlot = document.querySelector('.beforeSlot')
+  const afterSlot = document.querySelector('.afterSlot')
+  const secondDigit = document.querySelector('.digit2nd')
+  //隐藏
+  if (slotIndex.value == 3) {
+    // content3?.classList.add('.hiddenContent')
+    // content5?.classList.remove('.removeContent')
+
+    slotChange03.reverse()
+    slotChange05.play()
+    secondDigit?.classList.add('digitBtm')
+    secondDigit?.classList.remove('digitTop')
+    slotIndex.value = 5
+  } else if (slotIndex.value == 4) {
+    // content4?.classList.add('.hiddenContent')
+    // content3?.classList.remove('.removeContent')
+    slotChange04.reverse()
+    slotChange03.play()
+    secondDigit?.classList.add('digitTop')
+    secondDigit?.classList.remove('digitMid')
+    slotIndex.value = 3
+  } else {
+    // content5?.classList.add('.hiddenContent')
+    // content4?.classList.remove('.removeContent')
+    slotChange05.reverse()
+    slotChange04.play()
+    secondDigit?.classList.add('digitMid')
+    secondDigit?.classList.remove('digitBtm')
+    slotIndex.value = 4
+  }
+
+  //删除class标签
+  currentSlot?.classList.remove('currentSlot')
+  beforeSlot?.classList.remove('beforeSlot')
+  afterSlot?.classList.remove('afterSlot')
+
+  //新增标签
+  currentSlot?.classList.add('beforeSlot')
+  beforeSlot?.classList.add('afterSlot')
+  afterSlot?.classList.add('currentSlot')
+
+  console.log(slotIndex.value)
+}
+const rightClick = () => {
+  //获取dom
+  const currentSlot = document.querySelector('.currentSlot')
+  const beforeSlot = document.querySelector('.beforeSlot')
+  const afterSlot = document.querySelector('.afterSlot')
+  const secondDigit = document.querySelector('.digit2nd')
+  //隐藏
+  if (slotIndex.value == 3) {
+    // content3?.classList.add('.hiddenContent')
+    // content5?.classList.remove('.removeContent')
+
+    slotChange03.reverse()
+    slotChange04.play()
+    secondDigit?.classList.add('digitMid')
+    secondDigit?.classList.remove('digitTop')
+    slotIndex.value = 4
+  } else if (slotIndex.value == 4) {
+    // content4?.classList.add('.hiddenContent')
+    // content3?.classList.remove('.removeContent')
+    slotChange04.reverse()
+    slotChange05.play()
+    secondDigit?.classList.add('digitBtm')
+    secondDigit?.classList.remove('digitMid')
+    slotIndex.value = 5
+  } else {
+    // content5?.classList.add('.hiddenContent')
+    // content4?.classList.remove('.removeContent')
+    slotChange05.reverse()
+    slotChange03.play()
+    secondDigit?.classList.add('digitTop')
+    secondDigit?.classList.remove('digitBtm')
+    slotIndex.value = 3
+  }
+
+  //删除class标签
+  currentSlot?.classList.remove('currentSlot')
+  beforeSlot?.classList.remove('beforeSlot')
+  afterSlot?.classList.remove('afterSlot')
+  //新增标签
+  currentSlot?.classList.add('afterSlot')
+  beforeSlot?.classList.add('currentSlot')
+  afterSlot?.classList.add('beforeSlot')
+}
 </script>
 
 <style scoped>
@@ -347,19 +477,23 @@ onMounted(() => {
   width: 100%;
   margin: 5vmax 5%;
 }
-
+.sloganContentContainer {
+  z-index: 10;
+}
 .slogan3Content {
   position: absolute;
-}
-.content03 {
   visibility: hidden;
+  opacity: 0;
 }
 .slogan3Container {
   overflow: hidden;
   display: flex;
   width: 100%;
   box-sizing: border-box;
-  justify-content: center;
+  /* justify-content: center; */
+}
+.titleSpaceOccupied {
+  flex: 1;
 }
 
 .visible {
@@ -379,19 +513,15 @@ onMounted(() => {
   text-shadow: 0 0 1rem #53608f77;
   font-family: 'alibaba-puhui-bold';
   line-height: 1.5;
-  /* overflow: hidden; */
-  /* margin-bottom: -5%; */
   z-index: 1;
-  /* visibility: hidden;
-  opacity: 0; */
+}
+.numberSpaceOccupied {
+  flex: 1;
 }
 .digitContainer {
   position: relative;
-  /* width: 7.5vmax; */
   height: 7.5vmax;
-  /* aspect-ratio: 1; */
   display: flex;
-  /* transform: translateY(7.5vmax); */
   overflow: hidden;
   justify-content: center;
 }
@@ -410,11 +540,26 @@ onMounted(() => {
   transform: translateY(0vmax);
   transition: transform 1s ease-in-out;
 }
+
+.digitTop {
+  transform: translateY(0vmax);
+}
+.digitMid {
+  transform: translateY(-7.5vmax);
+}
+.digitBtm {
+  transform: translateY(-15vmax);
+}
+
+.thicken {
+  font-family: 'alibaba-puhui-heavy';
+}
+
 .component3Title {
   visibility: hidden;
   opacity: 0;
   font-family: 'alibaba-puhui-heavy';
-  font-size: 5vmax;
+  font-size: 4.5vmax;
   line-height: 1;
   color: #53608f;
   text-shadow: 0 0 1rem #ffffff77;
@@ -429,10 +574,10 @@ onMounted(() => {
 .component3Content {
   font-family: 'alibaba-puhui-regular';
   width: 50%;
-  font-size: 1.25vmax;
+  font-size: 1vmax;
   line-height: 1.5;
   color: #3d51c4;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
   /* padding: 0% 5% 0% 0.5%; */
   position: relative;
   /* transform: translateX(-65%); */
@@ -448,7 +593,7 @@ onMounted(() => {
   flex-direction: column;
   box-sizing: border-box;
   height: 100%;
-  width: 50%;
+  width: 45%;
   padding: 5%;
   right: 0;
   /* overflow: hidden; */
@@ -494,8 +639,8 @@ onMounted(() => {
 
 .beforeSlot {
   z-index: 2;
-  transform-origin: center center -600px;
-  transform: translateX(-80%) rotateY(-120deg) translateZ(-800px);
+  transform-origin: center center -450px;
+  transform: translateX(-80%) rotateY(-120deg) translateZ(-600px);
 }
 .currentSlot {
   z-index: 3;
@@ -504,8 +649,8 @@ onMounted(() => {
 }
 .afterSlot {
   z-index: 2;
-  transform-origin: center center -600px;
-  transform: translateX(80%) rotateY(120deg) translateZ(-800px);
+  transform-origin: center center -450px;
+  transform: translateX(80%) rotateY(120deg) translateZ(-600px);
 }
 
 .arrowLink03 {
@@ -587,7 +732,6 @@ onMounted(() => {
   height: 100%;
   transform: rotate(180deg);
   overflow: hidden;
-
   padding: 0.5vmax;
 }
 .rightArrowContainer {
@@ -602,18 +746,16 @@ onMounted(() => {
   padding: 0.5vmax;
 }
 .arrow {
-  --arrowColor: hsl(227, 27%, 44%);
+  fill: hsl(227, 27%, 44%);
   position: relative;
   width: 100%;
   aspect-ratio: 1;
   object-fit: contain;
-  transform: translateY(-10vmax);
-  filter: drop-shadow(0 10vmax 0 var(--arrowColor));
-  /* transition: all 0.5s ease-in-out; */
+  transition: all 0.1s ease-in;
 }
 .leftArrowContainer:hover .arrow,
 .rightArrowContainer:hover .arrow {
-  --arrowColor: hsl(227, 27%, 64%);
+  fill: hsl(227, 27%, 64%);
 }
 .leftArrow {
 }

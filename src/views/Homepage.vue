@@ -5,9 +5,8 @@
     <component1 />
     <component2 />
     <component3 />
-    <Footer></Footer>
+    <component4 />
     <backToTop />
-    <!-- <div class="spaceOccupied"></div> -->
   </div>
 </template>
 
@@ -17,9 +16,9 @@ import cover from '@/components/cover.vue'
 import component1 from '@/components/component1.vue'
 import component2 from '@/components/component2.vue'
 import component3 from '@/components/component3.vue'
-import Footer from '@/components/footer.vue'
-import backToTop from '@/utils/backToTop.vue'
 import component4 from '@/components/component4.vue'
+import backToTop from '@/utils/backToTop.vue'
+import Footer from '@/components/footer.vue'
 </script>
 
 <style scoped>

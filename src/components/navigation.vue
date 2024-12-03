@@ -3,10 +3,20 @@
     <header class="Navigation-BG-Container">
       <nav class="Navigation-Container">
         <ul class="navItemContainer">
-          <li class="navItem"><a href="#">Blogs</a></li>
-          <li class="navItem"><a href="#">Careers</a></li>
           <li class="navItem">
-            <a @click="moveToFooter">Contact Us</a>
+            <a href="#" target="_blank" rel="nofollow noopener noreferrer" :underline="false"
+              >Blogs</a
+            >
+          </li>
+          <li class="navItem">
+            <a href="/careers" target="_blank" rel="nofollow noopener noreferrer" :underline="false"
+              >Careers</a
+            >
+          </li>
+          <li class="navItem">
+            <a @click="moveToBottom" rel="nofollow noopener noreferrer" :underline="false"
+              >Contact Us</a
+            >
           </li>
         </ul>
       </nav>
@@ -28,7 +38,7 @@
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const moveToFooter = () => {
+const moveToBottom = () => {
   window.scrollTo({ top: document.documentElement.scrollHeight, left: 0, behavior: 'smooth' })
 }
 const backToHomepage = () => {
@@ -49,8 +59,6 @@ const backToHomepage = () => {
   transition: all 1.5s ease-out;
 }
 .Navigation-Select-Container:hover .Navigation-BG-Container {
-  /* opacity: 1 !important; */
-  /* transform: translateY(0%) !important; */
   transform: translateY(0) !important;
 }
 .Navigation-BG-Container {
@@ -68,15 +76,12 @@ const backToHomepage = () => {
     #ffffff55 90%
   );
   backdrop-filter: blur(10px) saturate(180%);
-  /* margin: 2.5% 10%; */
   margin: 0 10%;
   box-sizing: border-box;
   border-radius: 1vmax;
   padding: 0.75vmax 0%;
   z-index: 100;
   overflow: hidden;
-  /* transform: translateY(25%); */
-  /* opacity: 0; */
   transform-origin: center center;
   transition:
     opacity 0.5s ease-in-out,
@@ -95,7 +100,7 @@ const backToHomepage = () => {
   height: 100%;
   margin: 0 7.5%;
   box-sizing: border-box;
-  font-family: 'alibaba-puhui-medium';
+  font-family: 'alibaba-puhui-bold';
   text-transform: uppercase;
 }
 .navItem {
@@ -108,12 +113,8 @@ const backToHomepage = () => {
 .navItem > a {
   display: flex;
   text-decoration: none;
-  /* width: 7vmax; */
   color: hsl(231, 53%, 50%);
   align-items: center;
-
-  /* text-shadow: 0px 1px 3px #153f9800; */
-  /* justify-content: center; */
   transition: color 0.25s ease-in-out;
 }
 .navItem > a:hover {
@@ -124,8 +125,6 @@ const backToHomepage = () => {
   width: 40%;
   justify-content: center;
   cursor: pointer;
-  /* padding: 0.25vmax; */
-  /* margin: 1%; */
 }
 
 .logo {

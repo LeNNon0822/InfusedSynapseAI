@@ -62,7 +62,7 @@
       <div class="subSlogan slogan">for autonomous decision-making and learning</div>
     </div>
 
-    <arrow class="arrowLink" :themeColor="'white'">Learn More</arrow>
+    <!-- <arrow class="arrowLink" :themeColor="'white'">Learn More</arrow> -->
   </div>
 </template>
 

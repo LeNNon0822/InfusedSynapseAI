@@ -52,6 +52,7 @@ const props = defineProps({
   transition: all 0.5s ease-in-out;
   cursor: pointer;
   pointer-events: auto;
+
   /* z-index: 1000; */
 }
 .circleSVGContainer {

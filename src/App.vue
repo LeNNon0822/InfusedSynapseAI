@@ -74,6 +74,14 @@ html.lenis body {
   font-family: 'alibaba-puhui-bold';
   src: url('@/assets/font/Alibaba-PuHuiTi-Bold.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'libreBaskerville';
+  src: url('@/assets/font/LibreBaskerville-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'crimson';
+  src: url('@/assets/font/CrimsonText-Regular-5.ttf') format('truetype');
+}
 * {
   /* word setting */
   font-family: 'alibaba-puhui-regular';
