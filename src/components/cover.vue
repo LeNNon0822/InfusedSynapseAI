@@ -1,65 +1,17 @@
 <template>
-  <div class="Cover-Container">
+  <div :class="['Cover-Container', langCss]">
     <div class="leftCorner corner"></div>
     <div class="rightCorner corner"></div>
     <div class="sloganContainer">
       <div class="slogan">
-        <span class="sloganText">Building Universal </span>
+        <span class="sloganText">{{ $t('slogan.sloganLine1') }}</span>
       </div>
       <div class="slogan">
-        <span class="sloganText">Purpose R</span>
-        <span class="gearContainer">
-          <img
-            loading="lazy"
-            decoding="sync"
-            fetchpriority="high"
-            class="gear"
-            src="@/assets/icon/component/gear.png"
-            alt=""
-        /></span>
-        <span class="sloganText">b</span
-        ><span class="gearContainer">
-          <img
-            loading="lazy"
-            decoding="sync"
-            fetchpriority="high"
-            class="gear secondGear"
-            src="@/assets/icon/component/gear.png"
-            alt="" /></span
-        ><span>ti</span>
-        <span class="gearContainer">
-          <img
-            loading="lazy"
-            decoding="sync"
-            fetchpriority="high"
-            class="robotHand robotHandTopFinger"
-            src="@/assets/icon/component/robotHandTopFinger.png"
-            alt=""
-          />
-          <img
-            loading="lazy"
-            decoding="sync"
-            fetchpriority="high"
-            class="robotHand robotHandBottomFinger"
-            src="@/assets/icon/component/robotHandBottomFinger.png"
-            alt=""
-          />
-          <img
-            loading="lazy"
-            decoding="sync"
-            fetchpriority="high"
-            class="robotHand"
-            src="@/assets/icon/component/robotHandCenter.png"
-            alt=""
-          />
-        </span>
-      </div>
-      <div class="slogan">
-        <span class="sloganText">Intelligence</span>
+        <span class="sloganText">{{ $t('slogan.sloganLine2') }}</span>
       </div>
     </div>
-    <div class="sloganContainer">
-      <div class="subSlogan slogan">for autonomous decision-making and learning</div>
+    <div class="subSloganContainer">
+      <div class="subSlogan slogan">{{ $t('subSlogan') }}</div>
     </div>
 
     <!-- <arrow class="arrowLink" :themeColor="'white'">Learn More</arrow> -->
@@ -67,10 +19,11 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import arrow from '@/utils/circleArrow.vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+const langCss = ref(window.localStorage.getItem('lang') || 'zh')
 gsap.registerPlugin(ScrollTrigger)
 onMounted(() => {
   const bootTL = gsap.timeline({
@@ -105,7 +58,7 @@ onMounted(() => {
       start: 'top+=40% top',
       end: '+=30%',
       // scrub: 0.5,
-      markers: true,
+      // markers: true,
       toggleActions: 'play complete reverse reset'
     }
   })
@@ -143,82 +96,82 @@ onMounted(() => {
     duration: 0.25,
     ease: 'sine.inOut'
   })
-  const gearTL = gsap.to('.gear', {
-    rotate: '360deg',
-    duration: 1,
-    stagger: {
-      repeat: -1,
-      each: 0.45
-    },
+  // const gearTL = gsap.to('.gear', {
+  //   rotate: '360deg',
+  //   duration: 1,
+  //   stagger: {
+  //     repeat: -1,
+  //     each: 0.45
+  //   },
 
-    ease: 'none'
-  })
-  const robotHandTopTL = gsap
-    .timeline()
-    .to('.robotHandTopFinger', {
-      yPercent: 20,
-      duration: 0.25,
-      ease: 'sine.in',
-      delay: 1.5
-    })
-    .to('.robotHandTopFinger', {
-      yPercent: 0,
-      duration: 0.125,
-      ease: 'sine.in'
-    })
-    .to('.robotHandTopFinger', {
-      yPercent: 20,
-      duration: 0.1,
-      ease: 'sine.in'
-    })
-    .to('.robotHandTopFinger', {
-      yPercent: 0,
-      duration: 0.075,
-      ease: 'sine.in'
-    })
-    .to('.robotHandTopFinger', {
-      yPercent: 20,
-      duration: 0.1,
-      ease: 'sine.in'
-    })
-    .to('.robotHandTopFinger', {
-      yPercent: 0,
-      duration: 0.075,
-      ease: 'sine.in'
-    })
-  const robotHandBottomTL = gsap
-    .timeline()
-    .to('.robotHandBottomFinger', {
-      yPercent: -20,
-      duration: 0.25,
-      ease: 'sine.in',
-      delay: 1.5
-    })
-    .to('.robotHandBottomFinger', {
-      yPercent: 0,
-      duration: 0.1,
-      ease: 'sine.in'
-    })
-    .to('.robotHandBottomFinger', {
-      yPercent: -15,
-      duration: 0.075,
-      ease: 'sine.in'
-    })
-    .to('.robotHandBottomFinger', {
-      yPercent: 0,
-      duration: 0.125,
-      ease: 'sine.in'
-    })
-    .to('.robotHandBottomFinger', {
-      yPercent: -15,
-      duration: 0.075,
-      ease: 'sine.in'
-    })
-    .to('.robotHandBottomFinger', {
-      yPercent: 0,
-      duration: 0.125,
-      ease: 'sine.in'
-    })
+  //   ease: 'none'
+  // })
+  // const robotHandTopTL = gsap
+  //   .timeline()
+  //   .to('.robotHandTopFinger', {
+  //     yPercent: 20,
+  //     duration: 0.25,
+  //     ease: 'sine.in',
+  //     delay: 1.5
+  //   })
+  //   .to('.robotHandTopFinger', {
+  //     yPercent: 0,
+  //     duration: 0.125,
+  //     ease: 'sine.in'
+  //   })
+  //   .to('.robotHandTopFinger', {
+  //     yPercent: 20,
+  //     duration: 0.1,
+  //     ease: 'sine.in'
+  //   })
+  //   .to('.robotHandTopFinger', {
+  //     yPercent: 0,
+  //     duration: 0.075,
+  //     ease: 'sine.in'
+  //   })
+  //   .to('.robotHandTopFinger', {
+  //     yPercent: 20,
+  //     duration: 0.1,
+  //     ease: 'sine.in'
+  //   })
+  //   .to('.robotHandTopFinger', {
+  //     yPercent: 0,
+  //     duration: 0.075,
+  //     ease: 'sine.in'
+  //   })
+  // const robotHandBottomTL = gsap
+  //   .timeline()
+  //   .to('.robotHandBottomFinger', {
+  //     yPercent: -20,
+  //     duration: 0.25,
+  //     ease: 'sine.in',
+  //     delay: 1.5
+  //   })
+  //   .to('.robotHandBottomFinger', {
+  //     yPercent: 0,
+  //     duration: 0.1,
+  //     ease: 'sine.in'
+  //   })
+  //   .to('.robotHandBottomFinger', {
+  //     yPercent: -15,
+  //     duration: 0.075,
+  //     ease: 'sine.in'
+  //   })
+  //   .to('.robotHandBottomFinger', {
+  //     yPercent: 0,
+  //     duration: 0.125,
+  //     ease: 'sine.in'
+  //   })
+  //   .to('.robotHandBottomFinger', {
+  //     yPercent: -15,
+  //     duration: 0.075,
+  //     ease: 'sine.in'
+  //   })
+  //   .to('.robotHandBottomFinger', {
+  //     yPercent: 0,
+  //     duration: 0.125,
+  //     ease: 'sine.in'
+  //   })
 })
 </script>
 
@@ -239,7 +192,7 @@ img {
     url('@/assets/BGImg/roboticArm.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 15% 10%;
+  padding: 12.5% 10%;
   padding-top: min(10vmax, 10%);
   backdrop-filter: blur(10px);
 }
@@ -268,6 +221,22 @@ img {
 }
 .sloganContainer {
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.subSloganContainer {
+  overflow: hidden;
+}
+.zh .sloganContainer {
+  width: 60%;
+  height: 60%;
+  margin-top: 7.5%;
+}
+.zh .slogan {
+  line-height: 1.25;
 }
 .slogan {
   display: flex;
@@ -276,7 +245,7 @@ img {
   position: relative;
   font-family: 'alibaba-puhui-heavy';
   text-transform: uppercase;
-  font-size: 7.5vmax;
+  font-size: 8.5vmax;
   color: white;
   line-height: 1;
   text-shadow: 0 0 1rem #07363277;
@@ -285,16 +254,24 @@ img {
   vertical-align: middle;
 }
 .subSlogan {
-  width: 70%;
+  width: 100%;
   height: fit-content;
   position: relative;
-  font-family: 'alibaba-puhui-light';
+  font-family: 'libreBaskerville', 'SiYuanSongBold';
   font-size: 1vmax;
   line-height: 1.5;
-  color: hsl(228, 50%, 95%);
+  color: hsl(231, 53%, 25%);
   padding: 0 0.5%;
   margin: 0.25% 0 0%;
-  text-shadow: none;
+  /* text-shadow: none; */
+  text-shadow: 0vmax 0.2vmax 0.1vmax hsla(231, 53%, 75%, 1);
+}
+.zh .subSlogan {
+  font-size: 1.2vmax;
+  letter-spacing: 3vmax;
+}
+.en .subSlogan {
+  letter-spacing: 0.5vmax;
 }
 .arrowLink {
   visibility: hidden;

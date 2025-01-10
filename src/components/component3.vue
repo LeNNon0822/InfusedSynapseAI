@@ -1,105 +1,106 @@
 <template>
-  <div class="Component3-Container">
+  <div :class="['Component3-Container', langCss]">
     <div class="component3BGRectContainer">
       <div class="component3BGRect rect1"></div>
       <div class="component3BGRect rect2"></div>
     </div>
     <div class="component3TextPart">
       <div class="slogan3Container visible">
-        <div class="numberSpaceOccupied shrinkSpace"></div>
+        <div class="spaceOccupied shrinkSpace"></div>
         <div class="component3Number">
           <div class="digitContainer">
             <div class="digit1st">0</div>
             <div class="digit2nd digitTop"><span>3</span><span>4</span><span>5</span></div>
           </div>
         </div>
-        <div class="numberSpaceOccupied"></div>
+        <div class="spaceOccupied"></div>
       </div>
       <div class="sloganContentContainer">
         <div class="slogan3Content content03">
           <div class="slogan3Container">
             <div class="titleSpaceOccupied shrinkSpace"></div>
-            <div class="component3Title component3Slogan component3TitleMT">Universal Robotics</div>
-            <div class="titleSpaceOccupied"></div>
-          </div>
-          <div class="slogan3Container">
-            <div class="titleSpaceOccupied shrinkSpace"></div>
-            <div class="component3Title component3Slogan component3TitleMB">Core (ABrain)</div>
-            <div class="titleSpaceOccupied"></div>
-          </div>
-          <div class="slogan3Container">
-            <div class="component3Content component3Slogan">
-              ABrain is a transformative robotics core, engineered with a universal compatibility
-              layer that seamlessly adapts to various hardware and tasks. This robust foundation
-              enhances cognitive functions, enabling robots to learn, reason, and respond
-              intelligently across diverse environments.
+            <div class="component3Title component3Slogan component3TitleMT">
+              {{ $t('urc.titleLine1') }}
             </div>
-          </div>
-          <div class="slogan3Container">
-            <div class="component3Content component3Slogan">
-              Contact <span class="thicken">admin@abrain.com</span> to explore how our innovative
-              robotics solutions can bring adaptive, intelligent automation to your operations.
-            </div>
-          </div>
-          <arrow class="arrowLink03" :themeColor="'#53608F'">Learn More</arrow>
-        </div>
-        <div class="slogan3Content content04">
-          <div class="slogan3Container">
-            <div class="titleSpaceOccupied shrinkSpace"></div>
-            <div class="component3Title component3Slogan component3TitleMT">ABrain Adaptive</div>
-            <div class="titleSpaceOccupied"></div>
-          </div>
-          <div class="slogan3Container">
-            <div class="titleSpaceOccupied shrinkSpace"></div>
-            <div class="component3Title component3Slogan component3TitleMB">Robotics Platform</div>
-            <div class="titleSpaceOccupied"></div>
-          </div>
-          <div class="slogan3Container">
-            <div class="component3Content component3Slogan">
-              Ready to pioneer next-level AI solutions for robotics? Our ABrain-powered mobile
-              platform lets you develop adaptive applications effortlessly, with robust manipulation
-              capabilities and easy
-              <div class="">
-                integration—making advanced robotics as straightforward as a software deployment.
-              </div>
-            </div>
-          </div>
-          <div class="slogan3Container">
-            <div class="component3Content component3Slogan">
-              Apply for early access to explore impactful innovations in mobile robotics!
-            </div>
-          </div>
-          <arrow class="arrowLink03" :themeColor="'#53608F'">Learn More</arrow>
-        </div>
-        <div class="slogan3Content content05">
-          <div class="slogan3Container">
-            <div class="titleSpaceOccupied shrinkSpace"></div>
-            <div class="component3Title component3Slogan component3TitleMT">Adaptive Robotics</div>
-            <div class="titleSpaceOccupied"></div>
-          </div>
-          <div class="slogan3Container">
-            <div class="titleSpaceOccupied shrinkSpace"></div>
-            <div class="component3Title component3Slogan">Platform for</div>
             <div class="titleSpaceOccupied"></div>
           </div>
           <div class="slogan3Container">
             <div class="titleSpaceOccupied shrinkSpace"></div>
             <div class="component3Title component3Slogan component3TitleMB">
-              Security & Inspection
+              {{ $t('urc.titleLine2') }}
             </div>
             <div class="titleSpaceOccupied"></div>
           </div>
           <div class="slogan3Container">
             <div class="component3Content component3Slogan">
-              Seeking advanced automation for inspections, data collection, or patrols? Our ABrain
-              platform integrates intelligent sensing and decision-making to support autonomous
-              security and inspection in complex environments, ensuring precision and adaptability.
+              {{ $t('urc.content1') }}
             </div>
           </div>
           <div class="slogan3Container">
             <div class="component3Content component3Slogan">
-              Contact <span class="thicken">admin@abrain.com</span> to learn how we can enhance your
-              operations with intelligent robotics solutions.
+              {{ $t('urc.content2') }}<span class="thicken">admin@abrain.com</span>
+              {{ $t('urc.content3') }}
+            </div>
+          </div>
+          <!-- <arrow class="arrowLink03" :themeColor="'#53608F'"> {{ $t('learnMore') }}</arrow> -->
+        </div>
+        <div class="slogan3Content content04">
+          <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
+            <div class="component3Title component3Slogan component3TitleMT">
+              {{ $t('aa.titleLine1') }}
+            </div>
+            <div class="titleSpaceOccupied"></div>
+          </div>
+          <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
+            <div class="component3Title component3Slogan component3TitleMB">
+              {{ $t('aa.titleLine2') }}
+            </div>
+            <div class="titleSpaceOccupied"></div>
+          </div>
+          <div class="slogan3Container">
+            <div class="component3Content component3Slogan">
+              {{ $t('aa.content1') }}
+            </div>
+          </div>
+          <div class="slogan3Container">
+            <div class="component3Content component3Slogan">
+              {{ $t('aa.content2') }}
+            </div>
+          </div>
+          <div class="spaceOccupied"></div>
+          <!-- <arrow class="arrowLink03" :themeColor="'#53608F'">{{ $t('learnMore') }}</arrow> -->
+        </div>
+        <div class="slogan3Content content05">
+          <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
+            <div class="component3Title component3Slogan component3TitleMT">
+              {{ $t('arp.titleLine1') }}
+            </div>
+            <div class="titleSpaceOccupied"></div>
+          </div>
+          <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
+            <div class="component3Title component3Slogan">{{ $t('arp.titleLine2') }}</div>
+            <div class="titleSpaceOccupied"></div>
+          </div>
+          <div class="slogan3Container">
+            <div class="titleSpaceOccupied shrinkSpace"></div>
+            <div class="component3Title component3Slogan component3TitleMB">
+              {{ $t('arp.titleLine3') }}
+            </div>
+            <div class="titleSpaceOccupied"></div>
+          </div>
+          <div class="slogan3Container">
+            <div class="component3Content component3Slogan">
+              {{ $t('arp.content1') }}
+            </div>
+          </div>
+          <div class="slogan3Container">
+            <div class="component3Content component3Slogan">
+              {{ $t('arp.content2') }}<span class="thicken">admin@abrain.com</span
+              >{{ $t('arp.content3') }}
             </div>
           </div>
           <!-- <arrow class="arrowLink03" :themeColor="'#53608F'">Learn More</arrow> -->
@@ -108,9 +109,12 @@
     </div>
     <div class="component3ImagePart">
       <div class="componentImageContainer">
-        <div class="component3Img slot1 currentSlot"></div>
-        <div class="component3Img slot2 afterSlot"></div>
-        <div class="component3Img slot3 beforeSlot"></div>
+        <div class="component3Img slot1 currentSlot"><div class="image1-1 slotImage"></div></div>
+        <div class="component3Img slot2 afterSlot"><div class="image2-1 slotImage"></div></div>
+        <div class="component3Img slot3 beforeSlot">
+          <div class="image3-1 slotImage"></div>
+          <div class="image3-2 slotImage"></div>
+        </div>
       </div>
       <div class="sectionSelector">
         <div class="seperator"></div>
@@ -138,8 +142,9 @@
 <script setup lang="ts">
 import arrow from '@/utils/circleArrow.vue'
 import gsap from 'gsap'
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+const langCss = ref(window.localStorage.getItem('lang') || 'zh')
 const slotIndex = ref(3)
 var slotChange03: gsap.core.Tween, slotChange04: gsap.core.Tween, slotChange05: gsap.core.Tween
 
@@ -157,7 +162,8 @@ onMounted(() => {
   })
   bootImgTL
     .set('.component3Number', {
-      yPercent: 500
+      // yPercent: 500
+      autoAlpha: 0
     })
     .set('.component3ImagePart', {
       yPercent: 500
@@ -215,7 +221,7 @@ onMounted(() => {
       '<'
     )
     .to('.component3Number', {
-      yPercent: 0,
+      autoAlpha: 1,
       duration: 1,
       ease: 'sine.inOut'
     })
@@ -278,7 +284,7 @@ onMounted(() => {
       ease: 'sine.out'
     })
     .to(
-      '.numberSpaceOccupied.shrinkSpace',
+      '.spaceOccupied.shrinkSpace',
       {
         flex: 0,
         duration: 2.5,
@@ -343,6 +349,9 @@ onMounted(() => {
   slotChange04.pause()
   slotChange05.pause()
 })
+onUnmounted(() => {
+  ScrollTrigger.killAll()
+})
 const leftClick = () => {
   //获取dom
   const currentSlot = document.querySelector('.currentSlot')
@@ -387,7 +396,7 @@ const leftClick = () => {
   beforeSlot?.classList.add('afterSlot')
   afterSlot?.classList.add('currentSlot')
 
-  console.log(slotIndex.value)
+  // console.log(slotIndex.value)
 }
 const rightClick = () => {
   //获取dom
@@ -474,16 +483,21 @@ const rightClick = () => {
 .component3TextPart {
   position: relative;
   box-sizing: border-box;
-  width: 100%;
-  margin: 5vmax 5%;
+  width: 90%;
+  margin: 5vmax 5% 5vmax 5%;
+  z-index: 2000;
 }
 .sloganContentContainer {
   z-index: 10;
 }
 .slogan3Content {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   visibility: hidden;
   opacity: 0;
+  width: 100%;
+  height: 75%;
 }
 .slogan3Container {
   overflow: hidden;
@@ -515,7 +529,7 @@ const rightClick = () => {
   line-height: 1.5;
   z-index: 1;
 }
-.numberSpaceOccupied {
+.spaceOccupied {
   flex: 1;
 }
 .digitContainer {
@@ -552,7 +566,7 @@ const rightClick = () => {
 }
 
 .thicken {
-  font-family: 'alibaba-puhui-heavy';
+  font-family: 'CrimsonItalic';
 }
 
 .component3Title {
@@ -569,20 +583,23 @@ const rightClick = () => {
   margin-top: 1vmax;
 }
 .component3TitleMB {
-  margin-bottom: 1vmax;
+  margin-bottom: 2.5%;
 }
+
+.zh .component3Content {
+  line-height: 2;
+  font-size: 1.2vmax;
+}
+
 .component3Content {
-  font-family: 'alibaba-puhui-regular';
+  font-family: 'SiYuanSongMedium';
   width: 50%;
-  font-size: 1vmax;
+  font-size: 1.1vmax;
   line-height: 1.5;
   color: #3d51c4;
-  /* transform: translateX(-50%); */
-  /* padding: 0% 5% 0% 0.5%; */
   position: relative;
-  /* transform: translateX(-65%); */
   z-index: 1;
-  margin: 0.75% 0;
+  margin: 0.25% 0;
   visibility: hidden;
   opacity: 0;
 }
@@ -593,13 +610,12 @@ const rightClick = () => {
   flex-direction: column;
   box-sizing: border-box;
   height: 100%;
-  width: 45%;
+  width: 50%;
   padding: 5%;
   right: 0;
-  /* overflow: hidden; */
+  z-index: 2000;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(1.25%);
 }
 
 .componentImageContainer {
@@ -609,6 +625,7 @@ const rightClick = () => {
   width: 100%;
   perspective: 500px;
   perspective-origin: 50% 50%;
+  /* transform: translateY(-1vmax); */
 }
 
 .component3Img {
@@ -617,24 +634,45 @@ const rightClick = () => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 1.25vmax;
-  background-size: cover;
-  background-position: 50%;
-  transform-origin: center center;
+
   margin: 0 1.5%;
   transform-style: preserve-3d;
   transition: all 0.5s ease-in-out;
-  filter: blur(10px) saturate(1.8) contrast(0.25) brightness(1.1);
+  filter: blur(10px) saturate(1.8) contrast(0.25) brightness(1.1) opacity(0.25);
 }
 
-.slot1 {
-  background-image: url('@/assets/BGImg/nightHumanBlue.jpg');
+.slotImage {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50%;
+  transform-origin: center center;
+  border-radius: 1.25vmax;
 }
-.slot2 {
-  background-image: url('@/assets/BGImg/nightHumanGreen.jpg');
+.slot3 .slotImage {
+  height: 50%;
+  transform: translateY(-1vmax);
 }
-.slot3 {
-  background-image: url('@/assets/BGImg/nightHuman.jpg');
+
+.image1-1 {
+  background-image: url('@/assets/BGImg/robot.jpg');
+}
+
+.image2-1 {
+  width: 110%;
+  transform: translateX(-5%);
+  background-image: url('@/assets/BGImg/dogAndRobotDog.jpg');
+}
+
+.image3-1 {
+  margin-bottom: 2vmax;
+  background-image: url('@/assets/BGImg/adjustRobot.jpg');
+}
+.image3-2 {
+  margin-top: 2vmax;
+  background-image: url('@/assets/BGImg/adjustRobot2.jpg');
 }
 
 .beforeSlot {
@@ -667,7 +705,7 @@ const rightClick = () => {
   height: 10%;
   margin: 2.5% 0;
   border-radius: 1.25vmax;
-
+  transform: translateY(1.5vmax);
   backdrop-filter: saturate(180%) blur(3px);
   overflow: hidden;
 }

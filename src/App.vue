@@ -55,37 +55,91 @@ html.lenis body {
 }
 /* font */
 @font-face {
-  font-family: 'alibaba-puhui-regular';
+  font-family: 'Alibaba-puhui-regular';
+  font-display: swap;
   src: url('@/assets/font/Alibaba-PuHuiTi-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'alibaba-puhui-medium';
+  font-family: 'Alibaba-puhui-medium';
+  font-display: swap;
   src: url('@/assets/font/Alibaba-PuHuiTi-Medium.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'alibaba-puhui-light';
+  font-family: 'Alibaba-puhui-light';
+  font-display: swap;
   src: url('@/assets/font/Alibaba-PuHuiTi-Light.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'alibaba-puhui-heavy';
+  font-family: 'Alibaba-puhui-heavy';
+  font-display: swap;
   src: url('@/assets/font/Alibaba-PuHuiTi-Heavy.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Alibaba-puhui-bold';
+  font-display: swap;
   src: url('@/assets/font/Alibaba-PuHuiTi-Bold.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'libreBaskerville';
+  font-family: 'LibreBaskerville';
+  font-display: swap;
   src: url('@/assets/font/LibreBaskerville-Bold.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'crimson';
-  src: url('@/assets/font/CrimsonText-Regular-5.ttf') format('truetype');
+  font-family: 'Crimson';
+  font-display: swap;
+  src: url('@/assets/font/CrimsonText-SemiBold-6.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CrimsonItalic';
+  font-display: swap;
+  src: url('@/assets/font/CrimsonText-SemiBoldItalic-7.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CrimsonBold';
+  font-display: swap;
+  src: url('@/assets/font/CrimsonText-Bold-8.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SiYuanSongExtraLight';
+  font-display: swap;
+  src: url('@/assets/font/SourceHanSerifCN-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SiYuanSongLight';
+  font-display: swap;
+  src: url('@/assets/font/SourceHanSerifCN-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SiYuanSongRegular';
+  font-display: swap;
+  src: url('@/assets/font/SourceHanSerifCN-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SiYuanSongMedium';
+  font-display: swap;
+  src: url('@/assets/font/SourceHanSerifCN-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SiYuanSongSemiBold';
+  font-display: swap;
+  src: url('@/assets/font/SourceHanSerifCN-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SiYuanSongBold';
+  font-display: swap;
+  src: url('@/assets/font/SourceHanSerifCN-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SiYuanSongHeavy';
+  font-display: swap;
+  src: url('@/assets/font/SourceHanSerifCN-Heavy.ttf') format('truetype');
+}
+body {
+  /* word setting */
+  font-family: 'Alibaba-puhui-regular';
 }
 * {
-  /* word setting */
-  font-family: 'alibaba-puhui-regular';
-
   word-break: normal;
   word-wrap: break-word;
   /* color */

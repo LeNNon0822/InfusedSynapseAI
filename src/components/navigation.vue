@@ -4,19 +4,23 @@
       <nav class="Navigation-Container">
         <ul class="navItemContainer">
           <li class="navItem">
-            <a href="#" target="_blank" rel="nofollow noopener noreferrer" :underline="false"
-              >Blogs</a
+            <a href="#" target="_blank" rel="nofollow noopener noreferrer" :underline="false">{{
+              $t('navigator.blogs')
+            }}</a>
+          </li>
+          <li class="navItem">
+            <a
+              href="/careers"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              :underline="false"
+              >{{ $t('navigator.careers') }}</a
             >
           </li>
           <li class="navItem">
-            <a href="/careers" target="_blank" rel="nofollow noopener noreferrer" :underline="false"
-              >Careers</a
-            >
-          </li>
-          <li class="navItem">
-            <a @click="moveToBottom" rel="nofollow noopener noreferrer" :underline="false"
-              >Contact Us</a
-            >
+            <a @click="moveToBottom" rel="nofollow noopener noreferrer" :underline="false">{{
+              $t('navigator.contactUs')
+            }}</a>
           </li>
         </ul>
       </nav>
@@ -30,15 +34,17 @@
           alt=""
         />
       </div>
+      <langSelectBtn />
     </header>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import langSelectBtn from '@/utils/langSelectBtn.vue'
 
 const router = useRouter()
-const moveToBottom = () => {
+const moveToBottom = async () => {
   window.scrollTo({ top: document.documentElement.scrollHeight, left: 0, behavior: 'smooth' })
 }
 const backToHomepage = () => {
@@ -56,7 +62,7 @@ const backToHomepage = () => {
   top: 0dvh;
   margin-bottom: -17.5dvh;
   z-index: 100;
-  transition: all 1.5s ease-out;
+  transition: all 1.5s linear;
 }
 .Navigation-Select-Container:hover .Navigation-BG-Container {
   transform: translateY(0) !important;
@@ -84,8 +90,8 @@ const backToHomepage = () => {
   overflow: hidden;
   transform-origin: center center;
   transition:
-    opacity 0.5s ease-in-out,
-    transform 1s ease-in-out;
+    opacity 0.5s linear,
+    transform 1s linear;
 }
 .Navigation-Container {
   display: flex;
@@ -105,7 +111,7 @@ const backToHomepage = () => {
 }
 .navItem {
   display: flex;
-  width: fit-content;
+  width: 6.25vmax;
   margin: 0 0.75vmax;
   height: 100%;
   font-size: 1vmax;
@@ -115,7 +121,7 @@ const backToHomepage = () => {
   text-decoration: none;
   color: hsl(231, 53%, 50%);
   align-items: center;
-  transition: color 0.25s ease-in-out;
+  transition: color 0.25s linear;
 }
 .navItem > a:hover {
   color: hsl(231, 53%, 80%);

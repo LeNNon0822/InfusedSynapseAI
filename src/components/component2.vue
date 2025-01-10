@@ -1,22 +1,17 @@
 <template>
-  <div class="Component2-Container">
+  <div :class="['Component2-Container', langCss]">
     <div class="component2ImagePart"><div class="component2Img"></div></div>
     <div class="component2TextPart">
       <div class="numberContainer">
         <div class="component2Number"><span>0</span><span>2</span></div>
       </div>
       <div class="sloganContainer">
-        <div class="component2Title component2Slogan">Insight is key</div>
-      </div>
-      <div class="sloganContainer">
-        <div class="component2Content component2Slogan">
-          We are developing robots that gain insight into the logic of the world through
-          experiential learning, adapting their approaches to new tasks based on prior encounters
-          and continuously refining their cognitive abilities.
-        </div>
+        <div class="component2Title component2Slogan">{{ $t('insight.title') }}</div>
       </div>
 
-      <!-- <arrow class="arrowLink02" :themeColor="'#53608F'">Learn More</arrow> -->
+      <div class="component2Content">
+        {{ $t('insight.content') }}
+      </div>
     </div>
   </div>
 </template>
@@ -24,8 +19,9 @@
 <script setup lang="ts">
 import arrow from '@/utils/circleArrow.vue'
 import gsap from 'gsap'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+const langCss = ref(window.localStorage.getItem('lang') || 'zh')
 gsap.registerPlugin(ScrollTrigger)
 onMounted(() => {
   const bootTL = gsap.timeline({
@@ -52,9 +48,9 @@ onMounted(() => {
     .set('.Component2-Container .component2Slogan', {
       yPercent: -100
     })
-    .set('.arrowLink02', {
-      autoAlpha: 0
-    })
+  // .set('.arrowLink02', {
+  //   autoAlpha: 0
+  // })
   bootTL
     .from('.Component2-Container .component2Number', {
       scale: 50,
@@ -99,12 +95,12 @@ onMounted(() => {
       { yPercent: 0, duration: 0.75, ease: 'sine.out', stagger: 0.1 },
       '<'
     )
-    .to('.arrowLink02', { autoAlpha: 1, duration: 0.75, ease: 'sine.in' }, '>+=1')
-    .to('.arrowLink02', {
-      pointerEvents: 'auto',
-      duration: 0.01,
-      ease: 'none'
-    })
+    // .to('.arrowLink02', { autoAlpha: 1, duration: 0.75, ease: 'sine.in' }, '>+=1')
+    // .to('.arrowLink02', {
+    //   pointerEvents: 'auto',
+    //   duration: 0.01,
+    //   ease: 'none'
+    // })
     .to('.Component2-Container .component2Number', {
       color: '#53608F',
       ease: 'sine.in',
@@ -155,6 +151,9 @@ onMounted(() => {
   box-sizing: border-box;
   width: 25%;
   padding: 5vmax 0.5%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
 }
 .component2Number {
   --rippleWidth: 70%;
@@ -208,14 +207,20 @@ onMounted(() => {
   margin: 1vmax 0;
 }
 
+.zh .component2Content {
+  margin-top: 7.5%;
+  font-size: 1.2vmax;
+  line-height: 2;
+}
+
 .component2Content {
-  font-family: 'alibaba-puhui-regular';
-  font-size: 1vmax;
+  font-family: 'SiYuanSongMedium';
+  font-size: 1.1vmax;
   line-height: 1.5;
   color: #3d51c4;
-  line-height: 1.5;
-  padding: 0% 10% 0% 0.5%;
+  padding: 0% 20% 0% 0%;
   position: relative;
+  /* text-align: right; */
 }
 .component2ImagePart {
   --imageCoverPer: 100%;
@@ -236,24 +241,8 @@ onMounted(() => {
   border-radius: 1.25vmax;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('@/assets/BGImg/robotHandHoldLock.jpg');
+  background-image: url('@/assets/BGImg/armWithRobot.jpg');
   transform-origin: center 100%;
-}
-/* .component2Img::after {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border-radius: 1.25vmax;
-  background-color: #03423a;
-  clip-path: inset(var(--imageCoverPer) 0% 0% 0%);
-} */
-.arrowLink02 {
-  position: relative;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  font-family: 'alibaba-puhui-bold';
 }
 
 .sloganContainer {

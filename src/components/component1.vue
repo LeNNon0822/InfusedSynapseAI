@@ -1,31 +1,35 @@
 <template>
-  <div class="Component-Container">
+  <div :class="['Component-Container', langCss]">
     <div class="componentTextPart">
       <div class="sloganContainer">
         <div class="componentNumber"><span>0</span><span>1</span></div>
       </div>
       <div class="sloganContainer">
-        <div class="componentTitle componentSlogan">Our Mission</div>
+        <div class="componentTitle componentSlogan">{{ $t('mission.title') }}</div>
       </div>
       <div class="sloganContainer">
         <div class="componentContent componentSlogan componentContentStep componentContentStep1">
-          Empower Industries with
+          {{ $t('mission.contentLine1') }}
         </div>
       </div>
       <div class="sloganContainer">
         <div class="componentContent componentSlogan componentContentStep componentContentStep1">
-          Intelligent Robotic Systems that Enhance
+          {{ $t('mission.contentLine2') }}
         </div>
       </div>
 
       <div class="sloganContainer">
         <div class="componentContent componentSlogan componentContentStressed">
-          <div><span class="stressedText">Efficiency</span><span>,</span></div>
           <div>
-            <span class="stressedText">Safety</span> <span class="and stressedText">&</span>
+            <span class="stressedText">{{ $t('mission.target1') }}</span
+            ><span>{{ $t('mission.comma') }}</span>
+          </div>
+          <div>
+            <span class="stressedText">{{ $t('mission.target2') }}</span>
+            <span class="and stressedText">{{ $t('mission.and') }}</span>
           </div>
 
-          <div class="stressedText">Human-robot Collaboration</div>
+          <div class="stressedText">{{ $t('mission.target3') }}</div>
         </div>
       </div>
 
@@ -41,9 +45,10 @@
 <script setup lang="ts">
 import arrow from '@/utils/circleArrow.vue'
 import gsap from 'gsap'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+const langCss = ref(window.localStorage.getItem('lang') || 'zh')
 onMounted(() => {
   const bootImgTL = gsap.timeline({
     scrollTrigger: {
@@ -124,17 +129,17 @@ onMounted(() => {
       ease: 'sine.in',
       stagger: 0.1
     })
-    .to('.arrowLink01', {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: 'sine.in'
-    })
-    // 优先消除能选中状态
-    .to('.arrowLink01', {
-      pointerEvents: 'auto',
-      duration: 0.01,
-      ease: 'none'
-    })
+  // .to('.arrowLink01', {
+  //   autoAlpha: 1,
+  //   duration: 0.5,
+  //   ease: 'sine.in'
+  // })
+  // // 优先消除能选中状态
+  // .to('.arrowLink01', {
+  //   pointerEvents: 'auto',
+  //   duration: 0.01,
+  //   ease: 'none'
+  // })
 
   const quitTL = gsap.timeline({
     scrollTrigger: {
@@ -147,17 +152,17 @@ onMounted(() => {
     }
   })
   quitTL
-    // 优先消除能选中状态
-    .to('.Component-Container .arrowLink01', {
-      pointerEvents: 'none',
-      duration: 0.01,
-      ease: 'none'
-    })
-    .to('.Component-Container .arrowLink01', {
-      autoAlpha: 0,
-      duration: 0.5,
-      ease: 'sine.out'
-    })
+    // // 优先消除能选中状态
+    // .to('.Component-Container .arrowLink01', {
+    //   pointerEvents: 'none',
+    //   duration: 0.01,
+    //   ease: 'none'
+    // })
+    // .to('.Component-Container .arrowLink01', {
+    //   autoAlpha: 0,
+    //   duration: 0.5,
+    //   ease: 'sine.out'
+    // })
     .to(
       '.Component-Container .componentSlogan',
       {
@@ -227,11 +232,16 @@ onMounted(() => {
   color: #53608f;
   text-shadow: 0 0 1rem #ffffff77;
   z-index: 5;
-  margin: 1vmax 0;
+  margin: 1vmax 0 5%;
+}
+
+.zh .componentContent {
+  font-size: 1.2vmax;
+  line-height: 2;
 }
 .componentContent {
-  font-family: 'alibaba-puhui-regular';
-  font-size: 1vmax;
+  font-family: 'SiYuanSongMedium';
+  font-size: 1.1vmax;
   line-height: 1.5;
   color: hsl(231, 53%, 50%);
   padding: 0% 5% 0% 0.5%;
@@ -239,7 +249,7 @@ onMounted(() => {
 }
 
 .stressedText {
-  font-family: 'libreBaskerville';
+  font-family: 'libreBaskerville', 'SiYuanSongBold';
   font-size: 3vmax;
   line-height: 1.25;
   text-transform: uppercase;
@@ -282,13 +292,13 @@ onMounted(() => {
   background-color: hsl(227, 27%, 44%);
   clip-path: inset(var(--imageCoverPer) 0% 0% 0%);
 }
-.arrowLink01 {
+/* .arrowLink01 {
   position: relative;
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
   font-family: 'alibaba-puhui-bold';
-}
+} */
 .sloganContainer {
   overflow: hidden;
 }

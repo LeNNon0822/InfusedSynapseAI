@@ -2,112 +2,143 @@
   <div class="CareersPage-Container">
     <navigation />
     <div class="coverImg">
-      <div class="coverText">Careers</div>
+      <div class="coverText">{{ $t('career') }}</div>
     </div>
     <div class="contentContainer">
-      <div class="breadcrumb">
-        <a
-          class="breadcrumbItem"
-          href="/"
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-          :underline="false"
-          >Homepage</a
-        >
-        <div class="breadcrumbItem">Careers</div>
-      </div>
-      <div class="contentTitle">Careers</div>
-      <div class="jobsContainer">
-        <div class="jobPositionContainer">
-          <div class="jobPosition">
-            <div class="jobTitleContainer">
-              <div class="jobTitle">JobTitle01</div>
-              <!-- <div class="filler"></div> -->
-              <div class="expandArrowContainer" @click="toggleJob">
-                <div class="expandArrow"></div>
-              </div>
-            </div>
-            <div class="jobContentContainer">
-              <div class="jobInfo">Job Info line01 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line02 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line03 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line04 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line05 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line06 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line07 placeholder -- placeholder</div>
-            </div>
-          </div>
+      <div class="textContentContainer">
+        <div class="breadcrumb">
+          <a
+            class="breadcrumbItem"
+            href="/"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            :underline="false"
+            >{{ $t('homepage') }}</a
+          >
+          <div class="breadcrumbItem">{{ $t('career') }}</div>
         </div>
-        <div class="jobPositionContainer">
-          <div class="jobPosition">
-            <div class="jobTitleContainer">
-              <div class="jobTitle">JobTitle02</div>
-              <!-- <div class="filler"></div> -->
-              <div class="expandArrowContainer" @click="toggleJob">
-                <div class="expandArrow"></div>
+        <div class="groupPhoto"></div>
+        <div class="jobsContainer">
+          <div class="jobPositionContainer" v-for="job in jobDict">
+            <div class="jobPosition">
+              <div class="jobTitleContainer">
+                <div class="jobSymbol">
+                  <div class="circleLeft"></div>
+                  <div class="circleRight"></div>
+                </div>
+                <div class="jobTitle">{{ translateFn(job.jobTitle) }}</div>
+                <div class="expandArrowContainer" @click="toggleJob">
+                  <div class="expandArrow"></div>
+                </div>
               </div>
-            </div>
-            <div class="jobContentContainer">
-              <div class="jobInfo">Job Info line01 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line02 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line03 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line04 placeholder -- placeholder</div>
-            </div>
-          </div>
-        </div>
-        <div class="jobPositionContainer">
-          <div class="jobPosition">
-            <div class="jobTitleContainer">
-              <div class="jobTitle">JobTitle03</div>
-              <!-- <div class="filler"></div> -->
-              <div class="expandArrowContainer" @click="toggleJob">
-                <div class="expandArrow"></div>
+              <div class="jobContentContainer" v-for="block in job.blocks">
+                <div class="jobBlockTitle">{{ translateFn(block.blockTitle) }}</div>
+                <div class="jobContent" v-for="line in block.blockContent">
+                  <div class="jobInfo">{{ translateFn(line) }}</div>
+                </div>
               </div>
-            </div>
-            <div class="jobContentContainer">
-              <div class="jobInfo">Job Info line01 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line02 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line03 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line04 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line05 placeholder -- placeholder</div>
-            </div>
-          </div>
-        </div>
-        <div class="jobPositionContainer">
-          <div class="jobPosition">
-            <div class="jobTitleContainer">
-              <div class="jobTitle">JobTitle04</div>
-              <!-- <div class="filler"></div> -->
-              <div class="expandArrowContainer" @click="toggleJob">
-                <div class="expandArrow"></div>
-              </div>
-            </div>
-            <div class="jobContentContainer">
-              <div class="jobInfo">Job Info line01 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line02 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line03 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line04 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line05 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line06 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line07 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line08 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line09 placeholder -- placeholder</div>
-              <div class="jobInfo">Job Info line10 placeholder -- placeholder</div>
             </div>
           </div>
         </div>
       </div>
+      <pageFooter />
     </div>
-    <Footer> </Footer>
   </div>
 </template>
 
 <script setup lang="ts">
 import navigation from '@/components/navigation.vue'
-import Footer from '@/components/footer.vue'
+import pageFooter from '@/components/footer.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 import gsap from 'gsap'
 import { onMounted } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+const translateFn = (infoStr: string) => {
+  let address = 'job.'
+  return t(address + infoStr)
+}
+
+//工作职位的结构以便v-for循环调用
+
+const jobDict = [
+  {
+    jobTitle: 'jobTitle1',
+    blocks: [
+      {
+        blockTitle: 'blockTitle1_1',
+        blockContent: [
+          'blockContent1_1_1',
+          'blockContent1_1_2',
+          'blockContent1_1_3',
+          'blockContent1_1_4',
+          'blockContent1_1_5',
+          'blockContent1_1_6'
+        ]
+      },
+      {
+        blockTitle: 'blockTitle1_2',
+        blockContent: [
+          'blockContent1_2_1',
+          'blockContent1_2_2',
+          'blockContent1_2_3',
+          'blockContent1_2_4',
+          'blockContent1_2_5',
+          'blockContent1_2_6',
+          'blockContent1_2_7',
+          'blockContent1_2_8',
+          'blockContent1_2_9',
+          'blockContent1_2_10'
+        ]
+      }
+    ]
+  },
+  {
+    jobTitle: 'jobTitle2',
+    blocks: [
+      {
+        blockTitle: 'blockTitle2_1',
+        blockContent: ['blockContent2_1_1', 'blockContent2_1_2', 'blockContent2_1_3']
+      },
+      {
+        blockTitle: 'blockTitle2_2',
+        blockContent: [
+          'blockContent2_2_1',
+          'blockContent2_2_2',
+          'blockContent2_2_3',
+          'blockContent2_2_4',
+          'blockContent2_2_5'
+        ]
+      }
+    ]
+  },
+  {
+    jobTitle: 'jobTitle3',
+    blocks: [
+      {
+        blockTitle: 'blockTitle3_1',
+        blockContent: ['blockContent3_1_1', 'blockContent3_1_2', 'blockContent3_1_3']
+      },
+      {
+        blockTitle: 'blockTitle3_2',
+        blockContent: ['blockContent3_2_1', 'blockContent3_2_2', 'blockContent3_2_3']
+      },
+      {
+        blockTitle: 'blockTitle3_3',
+        blockContent: [
+          'blockContent3_3_1',
+          'blockContent3_3_2',
+          'blockContent3_3_3',
+          'blockContent3_3_4',
+          'blockContent3_3_5'
+        ]
+      }
+    ]
+  }
+]
+
 const toggleJob = (e: MouseEvent) => {
   const jobPosition = (
     (e.target as HTMLElement).closest('.jobPositionContainer') as HTMLElement
@@ -118,7 +149,10 @@ const toggleJob = (e: MouseEvent) => {
 <style scoped>
 .CareersPage-Container {
   position: relative;
+  box-sizing: border-box;
   width: 100%;
+  min-width: 960px;
+  height: fit-content;
 }
 .coverImg {
   display: flex;
@@ -152,6 +186,7 @@ const toggleJob = (e: MouseEvent) => {
 
 .coverText {
   z-index: 10;
+  font-family: 'Alibaba-puhui-heavy';
 }
 
 .contentContainer {
@@ -159,11 +194,18 @@ const toggleJob = (e: MouseEvent) => {
   box-sizing: border-box;
   width: 100%;
   /* min-height: 200dvh; */
-  padding: 2.5% 10%;
+
   background-image: url('@/assets/BGImg/subPageBGv2.jpg');
   background-repeat: no-repeat;
-  background-position: center;
+  /* background-position: top; */
   background-size: cover;
+}
+
+.textContentContainer {
+  position: relative;
+  padding: 2.5% 10%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .breadcrumb {
@@ -177,7 +219,6 @@ const toggleJob = (e: MouseEvent) => {
   font-family: 'alibaba-puhui-bold';
   vertical-align: text-bottom;
   font-size: 0.9vmax;
-  line-height: 1.5;
   color: hsl(231, 53%, 25%);
 }
 
@@ -200,9 +241,23 @@ a[class='breadcrumbItem']:hover {
   content: url('src/assets/icon/component/rightBracket.svg');
   font-family: 'crimson';
   font-weight: bolder;
+  height: 0.9vmax;
   margin: 0 0.5vmax;
   font-size: 0.9vmax;
-  vertical-align: text-bottom;
+  vertical-align: middle;
+}
+
+.groupPhoto {
+  position: relative;
+  display: flex;
+  height: 35vmax;
+  width: 100%;
+  margin: 5% 0% 2.5%;
+  background-size: cover;
+  background-position: center 50%;
+  background-image: url('@/assets/BGImg/groupPhoto.jpeg');
+  border-radius: 1.25vmax;
+  box-shadow: 0px 0.5vmax 1vmax 0.1vmax rgba(0, 0, 0, 0.25);
 }
 
 .contentTitle {
@@ -210,7 +265,7 @@ a[class='breadcrumbItem']:hover {
   box-sizing: border-box;
   width: 100%;
   margin: 5% 0 2.5%;
-  font-family: 'libreBaskerville';
+  font-family: 'libreBaskerville', 'SiYuanSongBold';
   font-size: 2.5vmax;
   text-transform: uppercase;
   color: hsl(231, 53%, 10%);
@@ -232,7 +287,7 @@ a[class='breadcrumbItem']:hover {
   margin: 1.5vmax 0;
   background: linear-gradient(hsla(210, 100%, 100%, 0.8) 60%, hsla(210, 100%, 97%, 0.8) 100%);
   backdrop-filter: blur(10px) saturate(180%);
-  transition: all ease 0.5s;
+  /* transition: all ease 0.5s; */
   box-shadow: inset 0 0vmax 0.1vmax 0.1vmax rgba(0, 0, 0, 0.1);
 }
 
@@ -247,16 +302,10 @@ a[class='breadcrumbItem']:hover {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 2.5vmax 5vmax;
-
-  /* z-index: 10; */
-  transition: all ease 0.5s;
+  padding: 2.5vmax 5vmax 2.5vmax 5vmax;
+  /* transition: all ease 0.5s; */
   border-radius: 1vmax;
 }
-
-/* .jobPositionContainer.toggleJob .jobPosition {
-  padding: 3.5vmax 5vmax;
-} */
 
 .jobTitleContainer {
   position: relative;
@@ -264,6 +313,7 @@ a[class='breadcrumbItem']:hover {
   width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
 }
 .filler {
   flex: 1;
@@ -297,50 +347,76 @@ a[class='breadcrumbItem']:hover {
   transform: rotate(180deg);
 }
 
+.jobSymbol {
+  display: flex;
+  position: relative;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100%;
+  width: 7.5vmax;
+  box-sizing: border-box;
+}
+.circleLeft {
+  position: relative;
+  display: flex;
+  height: 2vmax;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: hsl(231, 53%, 50%);
+  mix-blend-mode: hard-light;
+}
+
+.circleRight {
+  position: relative;
+  display: flex;
+  height: 2vmax;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: hsl(231, 53%, 75%);
+  mix-blend-mode: hard-light;
+  transform: translateX(-50%);
+}
+
 .jobTitle {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  font-family: 'Hiragino Sans GB';
-  font-weight: 600;
-  font-size: 1vmax;
+  font-family: 'Alibaba-puhui-bold';
+  font-size: 1.2vmax;
   line-height: 2;
-
-  text-transform: uppercase;
+  text-transform: capitalize;
+  color: hsl(231, 53%, 50%);
 }
 .jobPositionContainer.toggleJob .jobContentContainer {
   max-height: 100vmax;
+  margin: 1vmax 0 2vmax;
 }
 
 .jobContentContainer {
   width: 100%;
   height: 100%;
   max-height: 0;
-  transition: max-height ease 0.5s;
   overflow: hidden;
+  margin: 0vmax;
 }
+
+.jobBlockTitle {
+  font-size: 0.9vmax;
+  font-family: 'Alibaba-puhui-medium';
+  margin: 0vmax 0 0.5vmax;
+  display: flex;
+  box-sizing: border-box;
+  line-height: 2;
+}
+
 .jobInfo {
   position: relative;
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  font-family: 'Hiragino Sans GB';
+  /* font-family: 'Alibaba-puhui-regular'; */
   font-size: 0.8vmax;
-  line-height: 1.5;
-  margin: 1vmax 0 0.5vmax;
-}
-.bottomFooterContainer {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 7dvh;
-  font-size: 0.75vmax;
-  background-color: black;
-  color: #ffffff;
-  font-family: 'alibaba-puhui-light';
-  justify-content: center;
-  align-items: center;
-  font-weight: 1000;
-  letter-spacing: 0.05vmax;
+  line-height: 2;
+  /* margin: 1vmax 0 0.5vmax; */
 }
 </style>

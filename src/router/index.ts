@@ -9,6 +9,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/Homepage.vue')
   },
   {
+    path: '/refresh',
+    name: 'Refresh',
+    component: () => import('@/utils/refresh.vue')
+  },
+  {
     path: '/template/1',
     name: 'ContentTemplate',
     meta: { title: 'ContentTemplate' },
