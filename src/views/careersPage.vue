@@ -238,7 +238,7 @@ a[class='breadcrumbItem']:hover {
   text-decoration: underline 0.1vmax !important;
 }
 .breadcrumbItem:not(:last-child)::after {
-  content: url('src/assets/icon/component/rightBracket.svg');
+  content: url('@/assets/icon/component/rightBracket.svg');
   font-family: 'crimson';
   font-weight: bolder;
   height: 0.9vmax;

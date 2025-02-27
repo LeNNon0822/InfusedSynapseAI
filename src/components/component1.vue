@@ -152,17 +152,6 @@ onMounted(() => {
     }
   })
   quitTL
-    // // 优先消除能选中状态
-    // .to('.Component-Container .arrowLink01', {
-    //   pointerEvents: 'none',
-    //   duration: 0.01,
-    //   ease: 'none'
-    // })
-    // .to('.Component-Container .arrowLink01', {
-    //   autoAlpha: 0,
-    //   duration: 0.5,
-    //   ease: 'sine.out'
-    // })
     .to(
       '.Component-Container .componentSlogan',
       {

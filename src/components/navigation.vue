@@ -44,7 +44,7 @@ import { useRouter } from 'vue-router'
 import langSelectBtn from '@/utils/langSelectBtn.vue'
 
 const router = useRouter()
-const moveToBottom = async () => {
+const moveToBottom = () => {
   window.scrollTo({ top: document.documentElement.scrollHeight, left: 0, behavior: 'smooth' })
 }
 const backToHomepage = () => {
@@ -115,6 +115,7 @@ const backToHomepage = () => {
   margin: 0 0.75vmax;
   height: 100%;
   font-size: 1vmax;
+  cursor: pointer;
 }
 .navItem > a {
   display: flex;

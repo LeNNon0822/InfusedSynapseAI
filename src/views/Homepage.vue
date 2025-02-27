@@ -5,8 +5,8 @@
     <component1 />
     <component2 />
     <component3 />
-
-    <pageFooter bgImg="radial-gradient(#ffffff, #e1e6fa 80%)" />
+    <component4 />
+    <pageFooter bgImg="#53608F" />
     <backToTop />
   </div>
 </template>
@@ -18,6 +18,7 @@ import cover from '@/components/cover.vue'
 import component1 from '@/components/component1.vue'
 import component2 from '@/components/component2.vue'
 import component3 from '@/components/component3.vue'
+import component4 from '@/components/component4.vue'
 import backToTop from '@/utils/backToTop.vue'
 import pageFooter from '@/components/footer.vue'
 import { onUnmounted } from 'vue'

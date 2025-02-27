@@ -168,7 +168,7 @@ onMounted(() => {
     .set('.component3ImagePart', {
       yPercent: 500
     })
-    .set('.arrowLink03', { yPercent: 500, autoAlpha: 0 })
+    // .set('.arrowLink03', { yPercent: 500, autoAlpha: 0 })
   bootImgTL
     .to('.component3BGRect', { scale: 0.5, duration: 1, ease: 'back.in' })
     .to('.rect1', {
@@ -307,17 +307,17 @@ onMounted(() => {
       duration: 1.5,
       ease: 'sine.in'
     })
-    .to('.arrowLink03', {
-      yPercent: 0,
-      autoAlpha: 1,
-      duration: 1,
-      ease: 'circ.in'
-    })
-    .to('.arrowLink03', {
-      pointerEvents: 'auto',
-      duration: 0.01,
-      ease: 'none'
-    })
+    // .to('.arrowLink03', {
+    //   yPercent: 0,
+    //   autoAlpha: 1,
+    //   duration: 1,
+    //   ease: 'circ.in'
+    // })
+    // .to('.arrowLink03', {
+    //   pointerEvents: 'auto',
+    //   duration: 0.01,
+    //   ease: 'none'
+    // })
     .to('.component3ImagePart', {
       autoAlpha: 1,
       yPercent: 0,

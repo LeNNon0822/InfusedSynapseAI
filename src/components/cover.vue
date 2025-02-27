@@ -33,24 +33,23 @@ onMounted(() => {
       toggleActions: 'play pause resume reset'
     }
   })
-  bootTL
-    .from('.slogan', {
-      autoAlpha: 0,
-      yPercent: -100,
-      duration: 0.5,
-      ease: 'sine.in',
-      stagger: 0.1
-    })
-    .to('.arrowLink', {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: 'sine.in'
-    })
-    .to('.arrowLink', {
-      pointerEvents: 'auto',
-      duration: 0.01,
-      ease: 'none'
-    })
+  bootTL.from('.slogan', {
+    autoAlpha: 0,
+    yPercent: -100,
+    duration: 0.5,
+    ease: 'sine.in',
+    stagger: 0.1
+  })
+  // .to('.arrowLink', {
+  //   autoAlpha: 1,
+  //   duration: 0.5,
+  //   ease: 'sine.in'
+  // })
+  // .to('.arrowLink', {
+  //   pointerEvents: 'auto',
+  //   duration: 0.01,
+  //   ease: 'none'
+  // })
 
   const quitTL = gsap.timeline({
     scrollTrigger: {
@@ -64,16 +63,16 @@ onMounted(() => {
   })
 
   quitTL
-    .to('.arrowLink', {
-      pointerEvents: 'none',
-      duration: 0.01,
-      ease: 'none'
-    })
-    .to('.arrowLink', {
-      autoAlpha: 0,
-      duration: 0.5,
-      ease: 'sine.out'
-    })
+    // .to('.arrowLink', {
+    //   pointerEvents: 'none',
+    //   duration: 0.01,
+    //   ease: 'none'
+    // })
+    // .to('.arrowLink', {
+    //   autoAlpha: 0,
+    //   duration: 0.5,
+    //   ease: 'sine.out'
+    // })
     .to('.slogan', {
       autoAlpha: 0,
       yPercent: 100,
@@ -264,7 +263,7 @@ img {
   padding: 0 0.5%;
   margin: 0.25% 0 0%;
   /* text-shadow: none; */
-  text-shadow: 0vmax 0.2vmax 0.1vmax hsla(231, 53%, 75%, 1);
+  text-shadow: 0vmax 0.1vmax 0.1vmax hsla(231, 53%, 75%, 1);
 }
 .zh .subSlogan {
   font-size: 1.2vmax;

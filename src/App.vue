@@ -94,11 +94,7 @@ html.lenis body {
   font-display: swap;
   src: url('@/assets/font/CrimsonText-SemiBoldItalic-7.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'CrimsonBold';
-  font-display: swap;
-  src: url('@/assets/font/CrimsonText-Bold-8.ttf') format('truetype');
-}
+
 @font-face {
   font-family: 'SiYuanSongExtraLight';
   font-display: swap;

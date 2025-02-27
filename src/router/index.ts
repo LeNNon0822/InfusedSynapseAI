@@ -11,31 +11,20 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/refresh',
     name: 'Refresh',
-    component: () => import('@/utils/refresh.vue')
+    component: () => import('@/utils/refresh.vue' as any)
   },
-  {
-    path: '/template/1',
-    name: 'ContentTemplate',
-    meta: { title: 'ContentTemplate' },
-    component: () => import('@/views/ThemePage/themePageTemplate1.vue')
-  },
-  {
-    path: '/template/2',
-    name: 'ListTemplate',
-    meta: { title: 'ListTemplate' },
-    component: () => import('@/views/ThemePage/themePageTemplate2.vue')
-  },
-  {
-    path: '/template/3',
-    name: 'ListTextTemplate',
-    meta: { title: 'ListTextTemplate' },
-    component: () => import('@/views/ThemePage/themePageTemplate3.vue')
-  },
+
   {
     path: '/careers',
     name: 'Careers',
     meta: { title: 'Careers' },
     component: () => import('@/views/careersPage.vue')
+  },
+  {
+    path: '/displayCase',
+    name: 'DisplayCase',
+    meta: { title: 'DisplayCase' },
+    component: () => import('@/views/displayCagePage.vue')
   },
   {
     path: '/:cathAll(.*)',

@@ -69,7 +69,7 @@ export default {
     tel: 'Tel:',
     telNum: 'xxxx-xxxxxxxxx',
     email: 'E-Mail: ',
-    emailAddr: 'xxxxxxxxxx@mail.com'
+    emailAddr: "xxxxxxxxxx{'@'}mail.com"
   },
   homepage: 'Homepage',
   career: 'Careers',
@@ -158,5 +158,8 @@ export default {
     blockContent3_3_4:
       '- Access to rich computational resources, including extensive A100 GPU resources and multiple robotic hardware platforms.',
     blockContent3_3_5: '- Scholarships or compensation incentives for outstanding students.'
+  },
+  displayCage: {
+    title: 'Display Cage Title'
   }
 }
