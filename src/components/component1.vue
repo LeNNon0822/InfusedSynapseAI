@@ -1,6 +1,8 @@
 <template>
+  <!-- 主页封面下第一个满屏页面编号为01 -->
   <div :class="['Component-Container', langCss]">
     <div class="componentTextPart">
+      
       <div class="sloganContainer">
         <div class="componentNumber"><span>0</span><span>1</span></div>
       </div>
@@ -48,8 +50,11 @@ import gsap from 'gsap'
 import { onMounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+// 获取当前页面的语言类型，默认为中文，从而控制不同语言下的css
 const langCss = ref(window.localStorage.getItem('lang') || 'zh')
+
 onMounted(() => {
+  // 页面动画图片物体时间线 
   const bootImgTL = gsap.timeline({
     scrollTrigger: {
       trigger: '.Component-Container',
@@ -64,9 +69,11 @@ onMounted(() => {
       scrub: 0.5
     }
   })
+  // 页面动画图片物体初始设置
   bootImgTL.set('.componentImg', {
     xPercent: 50
   })
+   // 页面动画图片物体分步设置
   bootImgTL
     .to('.componentImg', {
       xPercent: 0,
@@ -86,7 +93,7 @@ onMounted(() => {
       ease: 'sine.out',
       delay: 2.5
     })
-
+// 页面动画文字物体时间线 
   const bootTextTL = gsap.timeline({
     scrollTrigger: {
       trigger: '.Component-Container',
@@ -95,6 +102,7 @@ onMounted(() => {
       scrub: 0.5
     }
   })
+  // 页面动画文字物体分步设置
   bootTextTL
     .to('.componentNumber', {
       autoAlpha: 1,
@@ -141,6 +149,7 @@ onMounted(() => {
   //   ease: 'none'
   // })
 
+  // 页面结束动画时间线
   const quitTL = gsap.timeline({
     scrollTrigger: {
       trigger: '.Component-Container',
@@ -151,7 +160,19 @@ onMounted(() => {
       toggleActions: 'play complete reverse reset'
     }
   })
+  // 页面结束动画分布动画
   quitTL
+    // // 优先消除能选中状态
+    // .to('.Component-Container .arrowLink01', {
+    //   pointerEvents: 'none',
+    //   duration: 0.01,
+    //   ease: 'none'
+    // })
+    // .to('.Component-Container .arrowLink01', {
+    //   autoAlpha: 0,
+    //   duration: 0.5,
+    //   ease: 'sine.out'
+    // })
     .to(
       '.Component-Container .componentSlogan',
       {

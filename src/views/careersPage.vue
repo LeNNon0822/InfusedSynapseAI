@@ -1,4 +1,5 @@
 <template>
+  <!-- 招聘页 -->
   <div class="CareersPage-Container">
     <navigation />
     <div class="coverImg">
@@ -139,6 +140,7 @@ const jobDict = [
   }
 ]
 
+// 点击事件 -> 具体职位block的打开关闭
 const toggleJob = (e: MouseEvent) => {
   const jobPosition = (
     (e.target as HTMLElement).closest('.jobPositionContainer') as HTMLElement
@@ -238,7 +240,7 @@ a[class='breadcrumbItem']:hover {
   text-decoration: underline 0.1vmax !important;
 }
 .breadcrumbItem:not(:last-child)::after {
-  content: url('@/assets/icon/component/rightBracket.svg');
+  content: url('src/assets/icon/component/rightBracket.svg');
   font-family: 'crimson';
   font-weight: bolder;
   height: 0.9vmax;

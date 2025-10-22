@@ -1,181 +1,164 @@
 <template>
-  <div :class="['Component5-Container']" :style="styleVar">
-    <div class="slideContainer">
-      <div class="innerContainer">
+   <!-- 通用页脚 -->
+  <div class="Component4-Container" :style="styleVar">
+    <div class="footerContainer">
+      <div class="infoContainer">
+        <!-- 装饰区（四角） -->
         <div class="decorationPart">
-          <div class="circleDecoration leftTop">
-            <div class="circleLeft"></div>
-            <div class="circleRight"></div>
+          <div class="leftTop">
+            <div class="decorationDoubleCircle ">
+              <div class="leftCircle"></div>
+              <div class="rightCircle"></div>
+            </div>
           </div>
-          <div class="circleDecoration rightTop">
-            <div class="circleLeft"></div>
-            <div class="circleRight"></div>
+          <div class="leftBot">
+            <div class="decorationDoubleCircle">
+              <div class="leftCircle"></div>
+              <div class="rightCircle"></div>
+            </div>
           </div>
-          <div class="circleDecoration leftBottom">
-            <div class="circleLeft"></div>
-            <div class="circleRight"></div>
+          <div class="rightTop">
+            <div class="decorationDoubleCircle">
+              <div class="leftCircle"></div>
+              <div class="rightCircle"></div>
+            </div>
           </div>
+      
         </div>
+        <!-- 第一行标题文字部分 -->
         <div class="textPart">
-          <div class="footerTitle">
-            {{ $t('contact.title') }}
-            <div class="triCircleDecoration">
-              <div class="circleLeft"></div>
-              <div class="circleMid"></div>
-              <div class="circleRight"></div>
+          <div class="titleContainer">
+            <div class="titleText">{{$t("contact.title")}}</div>
+            <div class="triCircle">
+              <div class="leftCircle"></div>
+              <div class="midCircle"></div>
+              <div class="rightCircle"></div>
             </div>
-            <div class="tinyNav">
-              <nav class="Navigation-Container">
-                <ul class="navItemContainer">
-                  <li class="navItem">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                      :underline="false"
-                      >{{ $t('navigator.blogs') }}</a
-                    >
-                  </li>
-                  <li class="navItem">
-                    <a
-                      href="/careers"
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                      :underline="false"
-                      >{{ $t('navigator.careers') }}</a
-                    >
-                  </li>
-                  <li class="navItem">
-                    <a
-                      @click="moveToBottom"
-                      rel="nofollow noopener noreferrer"
-                      :underline="false"
-                      >{{ $t('navigator.contactUs') }}</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-            </div>
+       
           </div>
-          <div class="footerInfoContainer">
-            <div class="addrContainer footerBlockContainer">
-              <div class="containerWM"></div>
-              <div class="addrTitle footerBlockTitle">
-                {{ $t('contact.address') }}
-              </div>
-              <div class="addrContent footerBlockContent">
-                {{ $t('contact.addressContent') }}
-              </div>
-            </div>
+          <!-- 三等分栏 -->
+          <div class="contactTriContainer">
+            <div class="addrContainer">
+              <div class="addrBgImg"></div><div class="contactTitle">{{$t("contact.address")}}</div><div class="contactContent">{{$t("contact.addressContent")}}</div></div>
             <div class="seperator"></div>
-            <div class="telContainer footerBlockContainer">
-              <div class="containerWM"></div>
-              <div class="telTitle footerBlockTitle">
-                {{ $t('contact.tel') }}
-              </div>
-              <div class="telContent footerBlockContent">
-                {{ $t('contact.telNum') }}
-              </div>
-            </div>
+            <div class="telContainer">
+              <div class="telBgImg"></div><div class="contactTitle">{{$t("contact.tel")}}</div><div class="contactContent">{{$t("contact.telNum")}}</div></div>
             <div class="seperator"></div>
-            <div class="emailContainer footerBlockContainer">
-              <div class="containerWM"></div>
-              <div class="emailTitle footerBlockTitle">{{ $t('contact.email') }}</div>
-              <div class="emailContent footerBlockContent">{{ $t('contact.emailAddr') }}</div>
-            </div>
+             <div class="emailContainer">
+              <div class="emailBgImg"></div><div class="contactTitle">{{$t("contact.email")}}</div><div class="contactContent">{{$t("contact.emailAddr")}}</div></div>
+
           </div>
         </div>
       </div>
     </div>
+    <!-- 页底黑条 -->
     <div class="bottomFooterContainer">Copyright © Future Network of Intelligence Institute</div>
   </div>
+  
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-const langCss = ref(window.localStorage.getItem('lang') || 'zh')
+import arrow from '@/utils/circleArrow.vue'
+import gsap from 'gsap'
+import { computed, onMounted } from 'vue'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import { ref } from 'vue'
-
-const moveToBottom = () => {
-  window.scrollTo({ top: document.documentElement.scrollHeight, left: 0, behavior: 'smooth' })
-}
-
+// 根据不同页面背景要求，进行具体背景的参数（父传子）
 const props = defineProps({
   bgImg: {
-    type: String
-  },
-  langCss: {
     type: String
   }
 })
 let styleVar = computed(() => {
+  // console.log(props.bgImg)
   return { background: props.bgImg }
 })
+
+let blockSlide: gsap.core.Tween,
+  leftContainerVeil: gsap.core.Tween,
+  midContainerVeil: gsap.core.Tween,
+  rightContainerVeil: gsap.core.Tween
+
+
+
+
 </script>
 
 <style scoped>
-.Component5-Container {
+.Component4-Container {
   display: flex;
   flex-direction: column;
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  margin-top: 0dvh;
+
+   margin-top: 0dvh;
   overflow: hidden;
 }
 
-.slideContainer {
-  display: flex;
-  width: 100%;
-  height: 40vmax;
-  padding: 7.5% 10%;
-  box-sizing: border-box;
-}
-
-.innerContainer {
+.footerContainer{
   position: relative;
   display: flex;
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
+  background-color: #53608f;
+  width: 100%;
+  height: 35vmax;
+align-items: center;
+justify-content: center;
+}
+.infoContainer{
+  position: relative;
+  width: 80%;
+  height: 70%;
   border-radius: 1.25vmax;
-  background: #e1e6fa;
-}
-
-.circleDecoration {
-  display: flex;
-  position: absolute;
-  height: 100%;
-  width: 100%;
   box-sizing: border-box;
-  padding: 1.5%;
+  background-color: rgb(225, 230, 250);
 }
-.leftTop {
-  align-items: start;
-  justify-content: start;
+.decorationPart{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
-.rightTop {
+.decorationDoubleCircle{
+  display: flex;
+  position: relative;
+
+  height: auto;
+  width: 7.5vmax;
+  padding:2vmax;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.leftTop{
+  position: absolute;
+  display: flex;
+  width:100%;
+  height: 100%;
+  justify-content: flex-start;
   align-items: flex-start;
-  justify-content: flex-end;
 }
-.leftBottom {
+.rightTop{
+  position: absolute;
+  display: flex;
+  width:100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.leftBot{
+  position: absolute;
+  display: flex;
+  box-sizing: border-box;
+  width:100%;
+  height: 100%;
+  bottom: 0;
   align-items: flex-end;
   justify-content: flex-start;
+
 }
-.rightBottom {
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-.triCircleDecoration {
-  display: flex;
-  position: relative;
-  height: 100%;
-  width: auto;
-  box-sizing: border-box;
-  padding: 1.5%;
-}
-.circleLeft {
+.leftCircle{
   position: relative;
   display: flex;
   height: 2vmax;
@@ -183,9 +166,9 @@ let styleVar = computed(() => {
   border-radius: 50%;
   background-color: hsl(231, 53%, 50%);
   mix-blend-mode: hard-light;
-  transform: translateX(25%);
+
 }
-.circleMid {
+.midCircle{
   position: relative;
   display: flex;
   height: 2vmax;
@@ -193,147 +176,136 @@ let styleVar = computed(() => {
   border-radius: 50%;
   background-color: hsl(231, 53%, 62.5%);
   mix-blend-mode: hard-light;
-  transform: translateX(0%);
+  transform: translate(-25%);
 }
-.circleRight {
+.rightCircle{
   position: relative;
   display: flex;
   height: 2vmax;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: hsl(231, 53%, 75%);
+  background-color: hsl(230, 53%, 75%);
   mix-blend-mode: hard-light;
-  transform: translateX(-25%);
+  transform: translate(-50%);
+
 }
 
-.textPart {
+.textPart{
   position: relative;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 11% 7.5% 7.5% 7.5%;
-  width: 100%;
-}
-
-.footerTitle {
-  display: flex;
-  color: #53608f;
-  font-size: 4vmax;
-  text-transform: uppercase;
-  font-family: 'Alibaba-puhui-heavy';
-}
-.footerInfoContainer {
-  position: relative;
-  display: flex;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 0.8vmax;
-  font-family: 'libreBaskerville', 'SiYuanSongBold';
-}
-
-.footerBlockContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 3vmax 3vmax 2vmax;
-  width: 100%;
-  overflow: hidden;
-}
-
-.footerBlockTitle {
-  font-size: 0.9vmax;
-  color: #53608f;
-  font-family: 'SiYuanSongHeavy';
-  z-index: 10;
-}
-
-.footerBlockContent {
-  color: #3d51c4;
-  font-family: 'SiYuanSongMedium';
-  margin-top: 0.5vmax;
-  line-height: 1.5;
-  z-index: 10;
-}
-.seperator {
-  position: relative;
-  display: flex;
-  width: 0.45vmax;
-  border-radius: 0.5vmax;
-  height: 50%;
-  transform: translateY(100%);
-  box-sizing: border-box;
-  background-color: #ffffff7f;
-}
-
-.containerWM {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+
+}
+.titleContainer{
+  position: relative;
+  width: 100%;
+  padding: 0 10%;
+  padding-top: 6.5vmax;
+  display: flex;
+  align-items: center;
+}
+.titleText{
+  font-family: 'Alibaba-puhui-heavy';
+  font-size: 3.5vmax;
+  color: #53608f;
+}
+.triCircle{
+  display: flex;
+  position: relative;
+
+  height: auto;
+  width: 7.5vmax;
+  padding:2vmax;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-left: 2.5vmax;
+}
+.contactTriContainer{
+  position: relative;
+  width: 100%;
+  height: 30%;
+  padding: 0 10%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+.addrContainer,.telContainer,.emailContainer{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.contactTitle{
+  color: #53608f;
+  font-size: 1.1vmax;
+  line-height: 1.5;
+  margin-bottom: .5vmax;
+  z-index: 10;
+  font-family: 'libreBaskerville', 'SiYuanSongBold';
+}
+.contactContent{
+  font-size: .8vmax;
+  line-height: 1.5;
+  font-family: 'SiYuanSongMedium';
+  color:#3d51c4;
+  z-index: 10;
+}
+.seperator{
+  position: relative;
+  height: 50%;
+  width: .25vmax;
+  box-sizing: border-box;
+  border-radius: .25vmax;
+  margin: 0 2vmax;
+  
+  background-color: #ffffff7f;
+}
+.addrBgImg{
+  position: absolute;
+  width: 5vmax;
+  align-self: center;
+  opacity: .25;
+  filter: drop-shadow(0 10vmax #ffffff);
+  transform: translateY(-10vmax);
+  overflow: hidden;
+  aspect-ratio: 1;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
-  transform: translate(-3vmax, 8vmax);
-
-  filter: drop-shadow(0 -11vmax #ffffff2f) saturate(180%);
+  background-size:cover;
+  background-image: url("@/assets/icon/component/ADDRESS.png");
 }
-.addrContainer .containerWM {
-  background-image: url('@/assets/icon/component/ADDRESS_tiny.png');
-}
-.telContainer .containerWM {
-  background-image: url('@/assets/icon/component/TEL_tiny.png');
-}
-.emailContainer .containerWM {
-  background-image: url('@/assets/icon/component/email_tiny.png');
-}
-.mainSide {
-  width: 44%;
-}
-.subSide {
-  box-sizing: border-box;
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
-  /* word-wrap: break-word; */
-  display: flex;
-}
-.leftContainer .titleContainer {
-  margin-top: 4.5vmax;
-}
-.rightContainer .titleContainer {
-  margin-top: 4.5vmax;
-}
-.showContent {
-  transform: translateY(55%);
-}
-
-.thicken {
-  font-family: 'alibaba-puhui-medium';
-}
-
-.iconContainer {
-  display: flex;
-  box-sizing: border-box;
-  width: 2vmax;
-  aspect-ratio: 1;
-  margin-right: 0.25vmax;
-  padding: 0.2vmax;
+.telBgImg{
+  position: absolute;
+  width: 5vmax;
+  align-self: center;
+  opacity: .25;
+  filter: drop-shadow(0 10vmax #ffffff);
+  transform: translateY(-10vmax);
   overflow: hidden;
+  aspect-ratio: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-image: url("@/assets/icon/component/TEL.png");
 }
-
-.iconImg {
-  position: relative;
-  object-fit: cover;
-  box-sizing: border-box;
-  width: 1.2vmax;
-  height: 1.2vmax;
-  vertical-align: -12.5%;
-  filter: drop-shadow(0 -15vmax #ffffff);
-  transform: translateY(15vmax);
+.emailBgImg{
+  position: absolute;
+  width: 5vmax;
+  align-self: center;
+  opacity: .25;
+  filter: drop-shadow(0 10vmax #ffffff);
+  transform: translateY(-10vmax);
+  overflow: hidden;
+  aspect-ratio: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-image: url("@/assets/icon/component/email.png");
 }
-
 .bottomFooterContainer {
   position: relative;
   display: flex;
@@ -347,53 +319,5 @@ let styleVar = computed(() => {
   align-items: center;
   font-weight: 1000;
   letter-spacing: 0.05vmax;
-}
-
-.tinyNav {
-  position: relative;
-  display: flex;
-  width: 50%;
-  transform: translateX(-7.5vmax);
-  align-items: center;
-  justify-content: center;
-}
-
-.zh .tinyNav {
-  transform: translateX(4vmax) !important;
-}
-
-.Navigation-Container {
-  display: flex;
-  position: relative;
-  width: 30%;
-}
-.navItemContainer {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  width: 24vmax;
-  height: 100%;
-  /* margin: 0 7.5%; */
-  box-sizing: border-box;
-  font-family: 'alibaba-puhui-bold';
-  text-transform: uppercase;
-}
-.navItem {
-  display: flex;
-  width: 8vmax;
-  margin: 0 0.75vmax;
-  height: 100%;
-  font-size: 1vmax;
-  cursor: pointer;
-}
-.navItem > a {
-  display: flex;
-  text-decoration: none;
-  color: hsl(231, 53%, 50%);
-  align-items: center;
-  transition: color 0.25s linear;
-}
-.navItem > a:hover {
-  color: hsl(231, 53%, 80%);
 }
 </style>

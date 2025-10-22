@@ -1,27 +1,27 @@
 <template>
+   <!-- 主页封面下第四个满屏页面，其编号为04 -->
   <div :class="['Component4-Container', langCss]">
+
     <div class="component4TextPart">
-      <div class="visionBlock">
-        <div class="blockTitle">{{ $t('vision.title') }}</div>
-        <div class="blockContent">{{ $t('vision.content') }}</div>
-      </div>
-      <div class="stragegyBlock">
-        <div class="blockTitle">{{ $t('stragegy.title1') }}{{ $t('stragegy.title2') }}</div>
-        <div class="blockContent">{{ $t('stragegy.content') }}</div>
-      </div>
+      <div class="vision"><div class="textTitle">{{$t("vision.title")}}</div> <div class="textContent">{{$t("vision.content")}}</div></div>
+      <div class="stragegy"><div class="textTitle">{{$t("stragegy.title")}}</div> <div class="textContent">{{$t("stragegy.content")}}</div></div>
     </div>
+
   </div>
 </template>
 
 <script setup lang="ts">
+import arrow from '@/utils/circleArrow.vue'
 import gsap from 'gsap'
 import { onMounted, onUnmounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const langCss = ref(window.localStorage.getItem('lang') || 'zh')
+const slotIndex = ref(3)
+var slotChange03: gsap.core.Tween, slotChange04: gsap.core.Tween, slotChange05: gsap.core.Tween
 
 gsap.registerPlugin(ScrollTrigger)
 onMounted(() => {
-  const bootTL = gsap.timeline({
+  const bootImgTL = gsap.timeline({
     scrollTrigger: {
       trigger: '.Component4-Container',
       start: 'top top',
@@ -31,63 +31,55 @@ onMounted(() => {
       scrub: true
     }
   })
-  bootTL
-    .to('.visionBlock', {
-      autoAlpha: 1,
-      // y: '-15vmax',
-      duration: 1,
-      ease: 'sine.inOut'
-    })
-    .to('.visionBlock', {
-      autoAlpha: 0,
-      // y: '-15vmax',
-      duration: 1,
-      ease: 'sine.inOut'
-    })
-    .to('.stragegyBlock', {
-      autoAlpha: 1,
-      duration: 1,
-      delay: 1,
-      ease: 'sine.inOut'
-    })
-    .to('.stragegyBlock', {
-      autoAlpha: 0,
-      duration: 1,
-      ease: 'sine.inOut'
-    })
-    .to('.visionBlock', {
-      y: '-9.5vmax',
-      x: '-10vmax',
-      duration: 0.5,
-      ease: 'sine.inOut'
-    })
-    .to('.stragegyBlock', {
-      y: '5.5vmax',
-      x: '10vmax',
-      duration: 1,
-      delay: 0.5,
-      ease: 'sine.inOut'
-    })
-    .to('.visionBlock', {
-      x: 0,
-      autoAlpha: 1,
-      duration: 1,
-      ease: 'sine.inOut'
-    })
-    .to(
-      '.stragegyBlock',
-      {
-        x: 0,
-        autoAlpha: 1,
-        duration: 1,
-        ease: 'sine.inOut'
-      },
-      '<'
-    )
+  bootImgTL.to(".vision",{
+    autoAlpha:1,
+    duration:2,
+    ease:"sine.inOut"
+  }).to(".vision",{
+    autoAlpha:0,
+    duration:1,
+    ease:"sine.inOut"
+  })
+  .to(".stragegy",{
+    autoAlpha:1,
+    duration:2,
+    delay:2,
+    ease:"sine.inOut"
+  }).to(".stragegy",{
+    autoAlpha:0,
+    duration:1,
+    ease:"sine.inOut"
+  }).to(".vision",{
+    y:"-6.5vmax",
+    xPercent:-50,
+    duration:1,
+    ease:"sine.inOut"
+  })
+  .to(".stragegy",{
+    y:"6.5vmax",
+    xPercent:50,
+    duration:1,
+    ease:"sine.inOut"
+  })
+  .to(".vision",{
+    autoAlpha:1,
+    xPercent:0,
+    duration:1,
+    ease:"sine.inOut"
+  })
+  .to(".stragegy",{
+    autoAlpha:1,
+    xPercent:0,
+    duration:1,
+    ease:"sine.inOut"
+  })
+
+  
 })
 onUnmounted(() => {
   ScrollTrigger.killAll()
 })
+
 </script>
 
 <style scoped>
@@ -101,45 +93,50 @@ onUnmounted(() => {
   background: radial-gradient(#ffffff, #e1e6fa 80%);
   overflow: hidden;
 }
-.component4TextPart {
+.component4TextPart{
   position: relative;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
-.visionBlock {
+.vision{
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  padding: 0 27.1%;
   visibility: hidden;
   opacity: 0;
+
 }
-.stragegyBlock {
+ .stragegy{
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  padding: 0 27.1%;
   visibility: hidden;
   opacity: 0;
+ 
+}
+.zh .stragegy, .zh .vision{
+  padding:  0 34%  ;
+}
+.en .stragegy, .en .vision{
+  padding:  0 25%  ;
+}
+.textTitle{
+  font-family: "Alibaba-puhui-bold";
+  font-size: 1vmax;
+  text-transform: uppercase;
+  color: #53608f;
+ 
+
+}
+.textContent{
+
+  font-family: "Alibaba-puhui-medium";
+  font-size: 2vmax;
+  color: #3d51c4;
+
+
+  line-height: 1.5;
+  justify-content: center;
 }
 
-.blockTitle {
-  position: relative;
-  font-size: 1.5vmax;
-  font-family: 'Alibaba-puhui-heavy';
-  line-height: 1.5;
-  color: #3d51c4;
-}
-.blockContent {
-  position: relative;
-  font-family: 'Alibaba-puhui-bold';
-  font-size: 2vmax;
-  line-height: 1.5;
-  color: #53608f;
-}
 </style>

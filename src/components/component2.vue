@@ -1,4 +1,5 @@
 <template>
+  <!-- 主页封面下第二个满屏页面，其编号为02 -->
   <div :class="['Component2-Container', langCss]">
     <div class="component2ImagePart"><div class="component2Img"></div></div>
     <div class="component2TextPart">
@@ -21,9 +22,11 @@ import arrow from '@/utils/circleArrow.vue'
 import gsap from 'gsap'
 import { onMounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// 获取当前页面的语言类型，默认为中文，从而控制不同语言下的css
 const langCss = ref(window.localStorage.getItem('lang') || 'zh')
 gsap.registerPlugin(ScrollTrigger)
 onMounted(() => {
+  // 页面动画时间线
   const bootTL = gsap.timeline({
     // repeat: -1
     scrollTrigger: {
@@ -41,6 +44,7 @@ onMounted(() => {
       scrub: 0.5
     }
   })
+  // 页面动画初始设置
   bootTL
     .set('.Component2-Container .component2ImagePart', {
       xPercent: -100
@@ -51,6 +55,7 @@ onMounted(() => {
   // .set('.arrowLink02', {
   //   autoAlpha: 0
   // })
+  // 页面动画分步设置
   bootTL
     .from('.Component2-Container .component2Number', {
       scale: 50,

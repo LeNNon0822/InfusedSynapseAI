@@ -1,8 +1,10 @@
 <template>
+  <!-- 导航栏 -->
   <div class="Navigation-Select-Container">
     <header class="Navigation-BG-Container">
       <nav class="Navigation-Container">
         <ul class="navItemContainer">
+          <!-- BLOG区块暂时未开通 -->
           <li class="navItem">
             <a href="#" target="_blank" rel="nofollow noopener noreferrer" :underline="false">{{
               $t('navigator.blogs')
@@ -10,7 +12,7 @@
           </li>
           <li class="navItem">
             <a
-              href="/careers"
+              :href="careersLink"
               target="_blank"
               rel="nofollow noopener noreferrer"
               :underline="false"
@@ -41,12 +43,14 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import langSelectBtn from '@/utils/langSelectBtn.vue'
-
+import langSelectBtn from '../utils/langSelectBtn.vue'
+const careersLink = (import.meta as any).env?.VITE_BASE_PATH + 'careers'
 const router = useRouter()
-const moveToBottom = () => {
+// 点击效果 -> 移动至页脚
+const moveToBottom = async () => {
   window.scrollTo({ top: document.documentElement.scrollHeight, left: 0, behavior: 'smooth' })
 }
+// 点击效果 -> 移动至主页
 const backToHomepage = () => {
   router.push('/')
 }
@@ -115,7 +119,6 @@ const backToHomepage = () => {
   margin: 0 0.75vmax;
   height: 100%;
   font-size: 1vmax;
-  cursor: pointer;
 }
 .navItem > a {
   display: flex;

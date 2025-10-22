@@ -1,12 +1,13 @@
 <template>
+  <!-- 主页 -->
   <div class="Homepage-Container">
     <navigation />
     <cover />
     <component1 />
     <component2 />
     <component3 />
-    <component4 />
-    <pageFooter bgImg="#53608F" />
+    <component4/>
+    <pageFooter bgImg="radial-gradient(#ffffff, #e1e6fa 80%)" />
     <backToTop />
   </div>
 </template>

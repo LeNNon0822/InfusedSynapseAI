@@ -1,4 +1,5 @@
 <template>
+   <!-- 主页封面下第三个个满屏页面，其编号为03到05 -->
   <div :class="['Component3-Container', langCss]">
     <div class="component3BGRectContainer">
       <div class="component3BGRect rect1"></div>
@@ -9,6 +10,7 @@
         <div class="spaceOccupied shrinkSpace"></div>
         <div class="component3Number">
           <div class="digitContainer">
+            <!-- 动态可切换编号 -->
             <div class="digit1st">0</div>
             <div class="digit2nd digitTop"><span>3</span><span>4</span><span>5</span></div>
           </div>
@@ -168,7 +170,7 @@ onMounted(() => {
     .set('.component3ImagePart', {
       yPercent: 500
     })
-    // .set('.arrowLink03', { yPercent: 500, autoAlpha: 0 })
+    .set('.arrowLink03', { yPercent: 500, autoAlpha: 0 })
   bootImgTL
     .to('.component3BGRect', { scale: 0.5, duration: 1, ease: 'back.in' })
     .to('.rect1', {
@@ -307,17 +309,17 @@ onMounted(() => {
       duration: 1.5,
       ease: 'sine.in'
     })
-    // .to('.arrowLink03', {
-    //   yPercent: 0,
-    //   autoAlpha: 1,
-    //   duration: 1,
-    //   ease: 'circ.in'
-    // })
-    // .to('.arrowLink03', {
-    //   pointerEvents: 'auto',
-    //   duration: 0.01,
-    //   ease: 'none'
-    // })
+    .to('.arrowLink03', {
+      yPercent: 0,
+      autoAlpha: 1,
+      duration: 1,
+      ease: 'circ.in'
+    })
+    .to('.arrowLink03', {
+      pointerEvents: 'auto',
+      duration: 0.01,
+      ease: 'none'
+    })
     .to('.component3ImagePart', {
       autoAlpha: 1,
       yPercent: 0,
