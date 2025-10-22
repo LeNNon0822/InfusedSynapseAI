@@ -1,4 +1,5 @@
 // zh.ts
+// 所有中文文本的库
 export default {
   navigator: {
     blogs: '博客',
@@ -55,18 +56,17 @@ export default {
     content: '构建具备真实世界理解与交互能力的通用人工智能。'
   },
   stragegy: {
-    title1: '我们的',
-    title2: '战略融资伙伴',
+    title: '我们的战略融资伙伴',
     content: '在共同愿景的引领下，我们的使命因敬业的融资伙伴支持而更加强大。'
   },
   contact: {
     title: '联系我们',
     address: '地址: ',
-    addressContent: '广东省深圳市xx街道xx大厦xx号',
+    addressContent: '广东省深圳市福田区福田保税区富林大厦B516-518',
     tel: '联系电话: ',
-    telNum: 'xxxx-xxxxxxxxx',
+    telNum: '18743892085',
     email: '电子邮件: ',
-    emailAddr: "xxxxxxxxxx{'@'}mail.com"
+    emailAddr: "a128778683{'@'}outlook.com"
   },
   homepage: '主页',
   career: '职业招聘',
@@ -140,8 +140,5 @@ export default {
       '- 国际化合作与个人提升：可以推荐至国内外多个顶尖的计算机视觉、深度学习研究机构、院所进行实习、交流访问和帮助硕博士申请。',
     blockContent3_3_4: '- 丰富的计算资源：我们拥有大量A100资源，同时我们拥有多个机器人硬件平台。',
     blockContent3_3_5: '- 优秀的学生也将获得奖学金/薪资鼓励。'
-  },
-  displayCage: {
-    title: '展示柜标题'
   }
 }

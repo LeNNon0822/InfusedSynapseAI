@@ -57,19 +57,18 @@ export default {
       'To create general-purpose artificial intelligence rooted in real-world understanding and interaction.'
   },
   stragegy: {
-    title1: 'Our Strategic',
-    title2: 'Funding Allies',
+    title: 'Our Strategic Funding Allies',
     content:
       'Driven by a shared vision, our mission is strengthened by the invaluable support of our dedicated funding allies.'
   },
   contact: {
     title: 'Contact Us',
     address: 'Address: ',
-    addressContent: 'xx Provience xx City xx Street xx Building',
+    addressContent: '广东省深圳市福田区福田保税区富林大厦B516-518',
     tel: 'Tel:',
-    telNum: 'xxxx-xxxxxxxxx',
+    telNum: '18743892085',
     email: 'E-Mail: ',
-    emailAddr: "xxxxxxxxxx{'@'}mail.com"
+    emailAddr: "a128778683{'@'}outlook.com"
   },
   homepage: 'Homepage',
   career: 'Careers',
@@ -158,8 +157,5 @@ export default {
     blockContent3_3_4:
       '- Access to rich computational resources, including extensive A100 GPU resources and multiple robotic hardware platforms.',
     blockContent3_3_5: '- Scholarships or compensation incentives for outstanding students.'
-  },
-  displayCage: {
-    title: 'Display Cage Title'
   }
 }
