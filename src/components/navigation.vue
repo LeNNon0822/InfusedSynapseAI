@@ -12,7 +12,7 @@
           </li>
           <li class="navItem">
             <a
-              :href="careersLink"
+              @click="moveToCareers"
               target="_blank"
               rel="nofollow noopener noreferrer"
               :underline="false"
@@ -44,7 +44,9 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import langSelectBtn from '../utils/langSelectBtn.vue'
-const careersLink = (import.meta as any).env?.VITE_BASE_PATH + 'careers'
+const moveToCareers = () => {
+  router.push('/careers')
+}
 const router = useRouter()
 // 点击效果 -> 移动至页脚
 const moveToBottom = async () => {
@@ -119,6 +121,7 @@ const backToHomepage = () => {
   margin: 0 0.75vmax;
   height: 100%;
   font-size: 1vmax;
+  cursor: pointer;
 }
 .navItem > a {
   display: flex;

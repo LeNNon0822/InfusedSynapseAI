@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-router'
 
 //配置路由
 const routes: Array<RouteRecordRaw> = [
@@ -35,7 +35,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory((import.meta as any).env?.VITE_BASE_PATH),
+  history: createWebHashHistory((import.meta as any).env?.VITE_BASE_PATH),
   routes
 })
 router.beforeEach((to, from, next) => {
