@@ -1,5 +1,5 @@
 <template>
-   <!-- 主页封面下第三个个满屏页面，其编号为03到05 -->
+  <!-- 主页封面下第三个个满屏页面，其编号为03到05 -->
   <div :class="['Component3-Container', langCss]">
     <div class="component3BGRectContainer">
       <div class="component3BGRect rect1"></div>
@@ -142,7 +142,7 @@
 </template>
 
 <script setup lang="ts">
-import arrow from '@/utils/circleArrow.vue'
+import arrow from '../utils/circleArrow.vue'
 import gsap from 'gsap'
 import { onMounted, onUnmounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -506,6 +506,7 @@ const rightClick = () => {
   display: flex;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 0.75vmax;
   /* justify-content: center; */
 }
 .titleSpaceOccupied {
@@ -527,7 +528,7 @@ const rightClick = () => {
   font-size: 5vmax;
   color: #ffffff;
   text-shadow: 0 0 1rem #53608f77;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   line-height: 1.5;
   z-index: 1;
 }
@@ -571,10 +572,14 @@ const rightClick = () => {
   font-family: 'CrimsonItalic';
 }
 
+.zh .component3Title {
+  font-family: 'Alibaba-puhui-heavy';
+}
+
 .component3Title {
   visibility: hidden;
   opacity: 0;
-  font-family: 'alibaba-puhui-heavy';
+  font-family: 'Inter-heavy';
   font-size: 4.5vmax;
   line-height: 1;
   color: #53608f;
@@ -591,10 +596,11 @@ const rightClick = () => {
 .zh .component3Content {
   line-height: 2;
   font-size: 1.2vmax;
+  font-family: 'Alibaba-puhui-regular';
 }
 
 .component3Content {
-  font-family: 'SiYuanSongMedium';
+  font-family: 'Inter-regular';
   width: 50%;
   font-size: 1.1vmax;
   line-height: 1.5;
@@ -697,7 +703,7 @@ const rightClick = () => {
   margin-left: -1%;
   position: relative;
   pointer-events: none;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
 }
 .sectionSelector {
   position: relative;

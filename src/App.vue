@@ -79,6 +79,32 @@ html.lenis body {
   font-display: swap;
   src: url('@/assets/font/Alibaba-PuHuiTi-Bold.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Inter-regular';
+  font-display: swap;
+  src: url('@/assets/font/Inter-Regular-9.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Inter-medium';
+  font-display: swap;
+  src: url('@/assets/font/Inter-Medium-8.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Inter-light';
+  font-display: swap;
+  src: url('@/assets/font/Inter-Light-7.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Inter-heavy';
+  font-display: swap;
+  src: url('@/assets/font/Inter-ExtraBold-5.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Inter-bold';
+  font-display: swap;
+  src: url('@/assets/font/Inter-Bold-4.otf') format('opentype');
+}
 @font-face {
   font-family: 'LibreBaskerville';
   font-display: swap;
@@ -133,7 +159,7 @@ html.lenis body {
 }
 body {
   /* word setting */
-  font-family: 'Alibaba-puhui-regular';
+  font-family: 'Inter-regular';
 }
 * {
   word-break: normal;

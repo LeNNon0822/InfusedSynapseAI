@@ -1,5 +1,5 @@
 <template>
-   <!-- 主页封面 -->
+  <!-- 主页封面 -->
   <div :class="['Cover-Container', langCss]">
     <div class="leftCorner corner"></div>
     <div class="rightCorner corner"></div>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="subSloganContainer">
-      <div class="subSlogan slogan">{{ $t('subSlogan') }}</div>
+      <div class="subSlogan">{{ $t('subSlogan') }}</div>
     </div>
 
     <!-- <arrow class="arrowLink" :themeColor="'white'">Learn More</arrow> -->
@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import arrow from '@/utils/circleArrow.vue'
+import arrow from '../utils/circleArrow.vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const langCss = ref(window.localStorage.getItem('lang') || 'zh')
@@ -222,8 +222,9 @@ img {
 }
 .sloganContainer {
   overflow: hidden;
-  height: 100%;
+  height: 70%;
   display: flex;
+  margin-top: 5%;
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
@@ -238,19 +239,23 @@ img {
 }
 .zh .slogan {
   line-height: 1.25;
+  font-size: 8.5vmax;
+  width: 100%;
+  font-family: 'Alibaba-puhui-heavy';
 }
 .slogan {
   display: flex;
-  width: 100%;
+  width: 70%;
   height: fit-content;
   position: relative;
-  font-family: 'alibaba-puhui-heavy';
+  font-family: 'Inter-heavy';
   text-transform: uppercase;
-  font-size: 8.5vmax;
+  font-size: 6vmax;
   color: white;
   line-height: 1;
   text-shadow: 0 0 1rem #07363277;
 }
+
 .sloganText {
   vertical-align: middle;
 }
@@ -258,18 +263,20 @@ img {
   width: 100%;
   height: fit-content;
   position: relative;
-  font-family: 'libreBaskerville', 'SiYuanSongBold';
+  font-family: 'LibreBaskerville';
   font-size: 1vmax;
   line-height: 1.5;
   color: hsl(231, 53%, 25%);
   padding: 0 0.5%;
   margin: 0.25% 0 0%;
+  text-transform: uppercase;
   /* text-shadow: none; */
   text-shadow: 0vmax 0.2vmax 0.1vmax hsla(231, 53%, 75%, 1);
 }
 .zh .subSlogan {
   font-size: 1.2vmax;
   letter-spacing: 3vmax;
+  font-family: 'SiYuanSongBold';
 }
 .en .subSlogan {
   letter-spacing: 0.5vmax;
@@ -278,7 +285,7 @@ img {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
 }
 
 .gearContainer {

@@ -167,7 +167,7 @@ const toggleJob = (e: MouseEvent) => {
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 8vmax;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   justify-content: center;
   padding-top: 17.5%;
   color: white;
@@ -188,7 +188,7 @@ const toggleJob = (e: MouseEvent) => {
 
 .coverText {
   z-index: 10;
-  font-family: 'Alibaba-puhui-heavy';
+  font-family: 'Inter-heavy';
 }
 
 .contentContainer {
@@ -218,7 +218,7 @@ const toggleJob = (e: MouseEvent) => {
 }
 
 .breadcrumbItem {
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   vertical-align: text-bottom;
   font-size: 0.9vmax;
   color: hsl(231, 53%, 25%);
@@ -267,7 +267,7 @@ a[class='breadcrumbItem']:hover {
   box-sizing: border-box;
   width: 100%;
   margin: 5% 0 2.5%;
-  font-family: 'libreBaskerville', 'SiYuanSongBold';
+  font-family: 'libreBaskerville', 'Inter-bold';
   font-size: 2.5vmax;
   text-transform: uppercase;
   color: hsl(231, 53%, 10%);
@@ -383,7 +383,7 @@ a[class='breadcrumbItem']:hover {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  font-family: 'Alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   font-size: 1.2vmax;
   line-height: 2;
   text-transform: capitalize;
@@ -404,7 +404,7 @@ a[class='breadcrumbItem']:hover {
 
 .jobBlockTitle {
   font-size: 0.9vmax;
-  font-family: 'Alibaba-puhui-medium';
+  font-family: 'Inter-medium';
   margin: 0vmax 0 0.5vmax;
   display: flex;
   box-sizing: border-box;
@@ -416,7 +416,7 @@ a[class='breadcrumbItem']:hover {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  /* font-family: 'Alibaba-puhui-regular'; */
+  /* font-family: 'Inter-regular'; */
   font-size: 0.8vmax;
   line-height: 2;
   /* margin: 1vmax 0 0.5vmax; */

@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import arrow from '@/utils/circleArrow.vue'
+import arrow from '../utils/circleArrow.vue'
 import gsap from 'gsap'
 import { onMounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -176,7 +176,7 @@ onMounted(() => {
   background-color: #53608f;
   color: #53608f;
   text-shadow: 0 0 1rem #53608f77;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   line-height: calc(5vmax * 1.5);
   z-index: 10;
   transform-origin: center center;
@@ -201,8 +201,12 @@ onMounted(() => {
   transform: translateZ(-0.5px);
 }
 
+.zh .component2Title {
+  font-family: 'Alibaba-puhui-heavy';
+}
+
 .component2Title {
-  font-family: 'alibaba-puhui-heavy';
+  font-family: 'Inter-heavy';
   font-size: 4.5vmax;
   line-height: 1;
   color: #53608f;
@@ -216,10 +220,11 @@ onMounted(() => {
   margin-top: 7.5%;
   font-size: 1.2vmax;
   line-height: 2;
+  font-family: 'Alibaba-puhui-regular';
 }
 
 .component2Content {
-  font-family: 'SiYuanSongMedium';
+  font-family: 'Inter-regular';
   font-size: 1.1vmax;
   line-height: 1.5;
   color: #3d51c4;
@@ -227,6 +232,9 @@ onMounted(() => {
   position: relative;
   /* text-align: right; */
 }
+
+
+
 .component2ImagePart {
   --imageCoverPer: 100%;
   position: relative;

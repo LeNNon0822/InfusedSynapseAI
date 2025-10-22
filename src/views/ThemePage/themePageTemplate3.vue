@@ -119,7 +119,7 @@ const routeTo = (addr: string | RouteLocationAsRelativeGeneric | RouteLocationAs
   background-repeat: no-repeat;
 
   font-size: 12.5vmax;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   justify-content: center;
   padding-top: 15%;
   color: white;
@@ -193,7 +193,7 @@ const routeTo = (addr: string | RouteLocationAsRelativeGeneric | RouteLocationAs
   padding: 4.5% 5% 2.5%;
 }
 .listItemTitle {
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   font-size: 2.5vmax;
   line-height: calc(1.5 * 2.5vmax);
 }
@@ -206,14 +206,14 @@ const routeTo = (addr: string | RouteLocationAsRelativeGeneric | RouteLocationAs
   flex-direction: row;
 }
 .listItemIntro {
-  font-family: 'alibaba-puhui-regular';
+  font-family: 'Inter-regular';
   font-size: 0.75vmax;
   margin-right: 0.5%;
   margin-bottom: 0.5%;
   color: #00000077;
 }
 .listItemLinkArrow {
-  font-family: 'alibaba-puhui-regular';
+  font-family: 'Inter-regular';
   font-size: 0.9vmax;
   line-height: calc(1.5 * 0.9vmax);
   cursor: pointer;
@@ -234,7 +234,7 @@ const routeTo = (addr: string | RouteLocationAsRelativeGeneric | RouteLocationAs
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   cursor: pointer;
 }
 </style>

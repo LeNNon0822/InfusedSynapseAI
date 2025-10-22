@@ -1,17 +1,21 @@
 <template>
-   <!-- 主页封面下第四个满屏页面，其编号为04 -->
+  <!-- 主页封面下第四个满屏页面，其编号为04 -->
   <div :class="['Component4-Container', langCss]">
-
     <div class="component4TextPart">
-      <div class="vision"><div class="textTitle">{{$t("vision.title")}}</div> <div class="textContent">{{$t("vision.content")}}</div></div>
-      <div class="stragegy"><div class="textTitle">{{$t("stragegy.title")}}</div> <div class="textContent">{{$t("stragegy.content")}}</div></div>
+      <div class="vision">
+        <div class="textTitle">{{ $t('vision.title') }}</div>
+        <div class="textContent">{{ $t('vision.content') }}</div>
+      </div>
+      <div class="stragegy">
+        <div class="textTitle">{{ $t('stragegy.title') }}</div>
+        <div class="textContent">{{ $t('stragegy.content') }}</div>
+      </div>
     </div>
-
   </div>
 </template>
 
 <script setup lang="ts">
-import arrow from '@/utils/circleArrow.vue'
+import arrow from '../utils/circleArrow.vue'
 import gsap from 'gsap'
 import { onMounted, onUnmounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -31,55 +35,56 @@ onMounted(() => {
       scrub: true
     }
   })
-  bootImgTL.to(".vision",{
-    autoAlpha:1,
-    duration:2,
-    ease:"sine.inOut"
-  }).to(".vision",{
-    autoAlpha:0,
-    duration:1,
-    ease:"sine.inOut"
-  })
-  .to(".stragegy",{
-    autoAlpha:1,
-    duration:2,
-    delay:2,
-    ease:"sine.inOut"
-  }).to(".stragegy",{
-    autoAlpha:0,
-    duration:1,
-    ease:"sine.inOut"
-  }).to(".vision",{
-    y:"-6.5vmax",
-    xPercent:-50,
-    duration:1,
-    ease:"sine.inOut"
-  })
-  .to(".stragegy",{
-    y:"6.5vmax",
-    xPercent:50,
-    duration:1,
-    ease:"sine.inOut"
-  })
-  .to(".vision",{
-    autoAlpha:1,
-    xPercent:0,
-    duration:1,
-    ease:"sine.inOut"
-  })
-  .to(".stragegy",{
-    autoAlpha:1,
-    xPercent:0,
-    duration:1,
-    ease:"sine.inOut"
-  })
-
-  
+  bootImgTL
+    .to('.vision', {
+      autoAlpha: 1,
+      duration: 2,
+      ease: 'sine.inOut'
+    })
+    .to('.vision', {
+      autoAlpha: 0,
+      duration: 1,
+      ease: 'sine.inOut'
+    })
+    .to('.stragegy', {
+      autoAlpha: 1,
+      duration: 2,
+      delay: 2,
+      ease: 'sine.inOut'
+    })
+    .to('.stragegy', {
+      autoAlpha: 0,
+      duration: 1,
+      ease: 'sine.inOut'
+    })
+    .to('.vision', {
+      y: '-6.5vmax',
+      xPercent: -50,
+      duration: 1,
+      ease: 'sine.inOut'
+    })
+    .to('.stragegy', {
+      y: '6.5vmax',
+      xPercent: 50,
+      duration: 1,
+      ease: 'sine.inOut'
+    })
+    .to('.vision', {
+      autoAlpha: 1,
+      xPercent: 0,
+      duration: 1,
+      ease: 'sine.inOut'
+    })
+    .to('.stragegy', {
+      autoAlpha: 1,
+      xPercent: 0,
+      duration: 1,
+      ease: 'sine.inOut'
+    })
 })
 onUnmounted(() => {
   ScrollTrigger.killAll()
 })
-
 </script>
 
 <style scoped>
@@ -93,50 +98,50 @@ onUnmounted(() => {
   background: radial-gradient(#ffffff, #e1e6fa 80%);
   overflow: hidden;
 }
-.component4TextPart{
+.component4TextPart {
   position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.vision{
+.vision {
   position: absolute;
   visibility: hidden;
   opacity: 0;
-
 }
- .stragegy{
+.stragegy {
   position: absolute;
   visibility: hidden;
   opacity: 0;
- 
 }
-.zh .stragegy, .zh .vision{
-  padding:  0 34%  ;
+.zh .stragegy,
+.zh .vision {
+  padding: 0 34%;
 }
-.en .stragegy, .en .vision{
-  padding:  0 25%  ;
+.en .stragegy,
+.en .vision {
+  padding: 0 25%;
 }
-.textTitle{
-  font-family: "Alibaba-puhui-bold";
+.zh .textTitle {
+  font-family: 'Alibaba-puhui-bold';
+}
+.zh .textContent {
+  font-family: 'Alibaba-puhui-medium';
+}
+.textTitle {
+  font-family: 'Inter-bold';
   font-size: 1vmax;
   text-transform: uppercase;
   color: #53608f;
- 
-
 }
-.textContent{
-
-  font-family: "Alibaba-puhui-medium";
+.textContent {
+  font-family: 'Inter-medium';
   font-size: 2vmax;
   color: #3d51c4;
-
 
   line-height: 1.5;
   justify-content: center;
 }
-
 </style>

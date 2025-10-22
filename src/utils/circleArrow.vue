@@ -96,7 +96,7 @@ const props = defineProps({
   width: 10vmax;
   justify-content: center;
   align-items: center;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   font-size: 1.2vmax;
   transition: all 0.5s ease-in-out;
   transform: translateX(-20%) translateY(2.5%);

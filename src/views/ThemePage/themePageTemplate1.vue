@@ -96,7 +96,7 @@ onMounted(() => {
   background-repeat: no-repeat;
 
   font-size: 12.5vmax;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   justify-content: center;
   padding-top: 15%;
   color: white;
@@ -143,7 +143,7 @@ onMounted(() => {
 }
 .themeContentTitle {
   font-size: 5vmax;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   /* line-height: calc(1.25 * 7.5vmax); */
   color: #3d51c4;
   border-left: solid 0.75vmax #3d51c4;
@@ -169,7 +169,7 @@ onMounted(() => {
 } */
 .themeContentText {
   font-size: 1vmax;
-  font-family: 'alibaba-puhui-regular';
+  font-family: 'Inter-regular';
   line-height: calc(1.5 * 1vmax);
   text-indent: 2em;
   padding: 5% 7.5%;

@@ -67,13 +67,18 @@ const changeLang = (e: Event, lang: string) => {
   font-weight: bolder;
   transform: translateY(0vmax);
 }
+
+.zhBtn.selectedOption {
+  font-family: 'Alibaba-puhui-bold';
+}
+
 .selectedOption {
   display: flex;
   position: absolute;
   height: 100%;
   aspect-ratio: 1;
   font-size: 1.2vmax;
-  font-family: 'Alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   /* font-weight: bolder; */
   color: hsl(231, 53%, 50%);
   z-index: 99;

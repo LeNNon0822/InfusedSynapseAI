@@ -1,6 +1,6 @@
 <template>
   <!-- 导航栏 -->
-  <div class="Navigation-Select-Container">
+  <div :class="['Navigation-Select-Container', langCss]">
     <header class="Navigation-BG-Container">
       <nav class="Navigation-Container">
         <ul class="navItemContainer">
@@ -44,6 +44,8 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import langSelectBtn from '../utils/langSelectBtn.vue'
+import { ref } from 'vue'
+const langCss = ref(window.localStorage.getItem('lang') || 'zh')
 const moveToCareers = () => {
   router.push('/careers')
 }
@@ -104,6 +106,11 @@ const backToHomepage = () => {
   position: relative;
   width: 30%;
 }
+
+.zh .navItemContainer {
+  font-family: 'Alibaba-puhui-heavy';
+}
+
 .navItemContainer {
   display: flex;
   position: relative;
@@ -112,13 +119,13 @@ const backToHomepage = () => {
   height: 100%;
   margin: 0 7.5%;
   box-sizing: border-box;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-heavy';
   text-transform: uppercase;
 }
 .navItem {
   display: flex;
-  width: 6.25vmax;
-  margin: 0 0.75vmax;
+  width: 7vmax;
+  margin: 0 0.5vmax;
   height: 100%;
   font-size: 1vmax;
   cursor: pointer;

@@ -2,7 +2,6 @@
   <!-- 主页封面下第一个满屏页面编号为01 -->
   <div :class="['Component-Container', langCss]">
     <div class="componentTextPart">
-      
       <div class="sloganContainer">
         <div class="componentNumber"><span>0</span><span>1</span></div>
       </div>
@@ -45,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import arrow from '@/utils/circleArrow.vue'
+import arrow from '../utils/circleArrow.vue'
 import gsap from 'gsap'
 import { onMounted, ref } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -54,7 +53,7 @@ gsap.registerPlugin(ScrollTrigger)
 const langCss = ref(window.localStorage.getItem('lang') || 'zh')
 
 onMounted(() => {
-  // 页面动画图片物体时间线 
+  // 页面动画图片物体时间线
   const bootImgTL = gsap.timeline({
     scrollTrigger: {
       trigger: '.Component-Container',
@@ -73,7 +72,7 @@ onMounted(() => {
   bootImgTL.set('.componentImg', {
     xPercent: 50
   })
-   // 页面动画图片物体分步设置
+  // 页面动画图片物体分步设置
   bootImgTL
     .to('.componentImg', {
       xPercent: 0,
@@ -93,7 +92,7 @@ onMounted(() => {
       ease: 'sine.out',
       delay: 2.5
     })
-// 页面动画文字物体时间线 
+  // 页面动画文字物体时间线
   const bootTextTL = gsap.timeline({
     scrollTrigger: {
       trigger: '.Component-Container',
@@ -227,7 +226,7 @@ onMounted(() => {
   font-size: 5vmax;
   color: #53608f;
   text-shadow: 0 0 1rem #ffffff77;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
   line-height: 1.5;
   /* margin-bottom: -5%; */
   z-index: 1;
@@ -235,7 +234,7 @@ onMounted(() => {
   opacity: 0;
 }
 .componentTitle {
-  font-family: 'alibaba-puhui-heavy';
+  font-family: 'Inter-heavy';
   text-transform: uppercase;
   font-size: 4.5vmax;
   line-height: 1;
@@ -244,13 +243,17 @@ onMounted(() => {
   z-index: 5;
   margin: 1vmax 0 5%;
 }
+.zh .componentTitle {
+  font-family: 'Alibaba-puhui-heavy';
+}
 
 .zh .componentContent {
   font-size: 1.2vmax;
   line-height: 2;
+  font-family: 'Alibaba-puhui-regular';
 }
 .componentContent {
-  font-family: 'SiYuanSongMedium';
+  font-family: 'Inter-regular';
   font-size: 1.1vmax;
   line-height: 1.5;
   color: hsl(231, 53%, 50%);
@@ -258,8 +261,12 @@ onMounted(() => {
   position: relative;
 }
 
+.zh .stressedText {
+  font-family: 'SiYuanSongBold';
+}
+
 .stressedText {
-  font-family: 'libreBaskerville', 'SiYuanSongBold';
+  font-family: 'libreBaskerville', 'Inter-bold';
   font-size: 3vmax;
   line-height: 1.25;
   text-transform: uppercase;
@@ -307,7 +314,7 @@ onMounted(() => {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  font-family: 'alibaba-puhui-bold';
+  font-family: 'Inter-bold';
 } */
 .sloganContainer {
   overflow: hidden;
